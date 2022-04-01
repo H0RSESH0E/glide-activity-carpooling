@@ -1,40 +1,37 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model {}
+class Fuel extends Model {}
 
-Comment.init({
+Fuel.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
     },
-    comment_text: {
-        type: DataTypes.STRING,
+    fuel_price: {
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-            len: [4]
+            isDecimal: true     // checks for any number
         }
     },
-    image: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        // validate: {
-        //     isUrl: true,              // checks for url format
-        // }
+    vehicle: {
+        trype: DataTypes.STRING,
+        allowNull: false
     },
-    user_id: {
+    vehicle_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'user',
+            model: 'vehicle',
             key: 'id'
         }
     },
-    event_id: {
+    activity_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'event',
+            model: 'activity',
             key: 'id'
         }
     }
@@ -42,7 +39,7 @@ Comment.init({
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: 'fuel'
 });
 
-module.exports = Comment;
+module.exports = Fuel;
