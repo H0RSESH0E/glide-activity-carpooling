@@ -5,6 +5,8 @@ const Comment = require('./Comment');
 
 // create associations
 
+
+// VEHICLE
 User.hasMany(Post, {
     foreignKey: 'user_id'
 });
