@@ -1,35 +1,50 @@
 // import all models
-const Post = require('./Post');
+const Activity = require('./Activity');
+const Fuel = require('./Fuel');
 const User = require('./User');
-const Comment = require('./Comment');
+const Vehicle = require('./Vehicle');
+const Vehicl = require('./Vehicle');
 
 // create associations
 
+<<<<<<< HEAD
 
 // VEHICLE
 User.hasMany(Post, {
+=======
+// Users have many Activities
+User.hasMany(Activity, {
+>>>>>>> 01e75ab67242e6a36821bbb07a39c082b8658181
     foreignKey: 'user_id'
 });
 
-Post.belongsTo(User, {
+// Activities belong to User
+Activity.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Comment.belongsTo(User, {
+// Fuel belongs to 
+Fuel.belongsTo(Activity, {
     foreignKey: 'user_id'
 });
 
-User.hasMany(Comment, {
-    foreignKey: 'user_id'
+Fuel.hasMany(Activity, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
 });
 
-Comment.belongsTo(Post, {
-    foreignKey: 'post_id'
+Vehicle.hasMany(Activity, {
+    foreignKey: 'activity_id',
+    onDelete: 'SET NULL'
+})
+
+Vehicle.belongsToMany(Activity, {
+    foreignKey: 'activity_id'
 });
 
-Post.hasMany(Comment, {
-    foreignKey: 'post_id'
-});
+// Post.hasMany(Comment, {
+//     foreignKey: 'post_id'
+// });
 
 
-module.exports = { User, Post, Comment };
+module.exports = { User, Activity, Fuel, Comment };

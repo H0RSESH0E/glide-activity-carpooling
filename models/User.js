@@ -23,8 +23,14 @@ User.init({
         // turn on auto increment
         autoIncrement: true
     },
-    // define a username column
-    username: {
+    // define a first name column
+    first_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    // define a last name column
+    last_name: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
