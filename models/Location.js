@@ -21,7 +21,6 @@ Location.init({
     street: {
         type: DataTypes.STRING,
         allowNull: false,
-
     },
     city: {
         type: DataTypes.STRING,
@@ -42,7 +41,14 @@ Location.init({
     longitude: {
         type: DataTypes.STRING,
         allowNull: false,
-    }
+    },
+    location_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
+        }
+    },
 }, {
     sequelize,
     freezeTableName: true,
