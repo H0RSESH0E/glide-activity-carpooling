@@ -9,8 +9,14 @@ const Location = require('./Location');
 
 // create associations
 
+<<<<<<< HEAD
+
+// VEHICLE
+User.hasMany(Post, {
+=======
 // Users have many Activities
 User.hasMany(Activity, {
+>>>>>>> 01e75ab67242e6a36821bbb07a39c082b8658181
     foreignKey: 'user_id'
 });
 
