@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+
 // create our Activity model
 class Activity extends Model {}
 
@@ -35,15 +36,12 @@ Activity.init({
         allowNull: false,
     },
     risk_level: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     fee: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            isNumeric: true,          // will only allow numbers
-        }
     },
     equipment: {
         type: DataTypes.STRING,
@@ -54,20 +52,20 @@ Activity.init({
         allowNull: false,
     },
     max_participants: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
             max: 20,                  // only allow values <= 20
         }
     },
     min_participants: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
-        validate: {
-            min: 20,                  // only allow values <= 20
+        default: {
+            min: 1,                  // only allow values => 1
         }
     },
-    user_id: {
+    driver_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'user',

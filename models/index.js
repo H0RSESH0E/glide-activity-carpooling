@@ -3,7 +3,9 @@ const Activity = require('./Activity');
 const Fuel = require('./Fuel');
 const User = require('./User');
 const Vehicle = require('./Vehicle');
-const Vehicl = require('./Vehicle');
+const Event = require('./Event');
+const Comment = require('./Comment');
+const Location = require('./Location');
 
 // create associations
 
@@ -17,28 +19,15 @@ Activity.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-// Fuel belongs to 
-Fuel.belongsTo(Activity, {
-    foreignKey: 'user_id'
+// Vehicle belongs to a User
+Vehicle.belongsTo(User, {
+    foreignKey: 'vehicle_id'
 });
 
-Fuel.hasMany(Activity, {
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
+// Vehicle belongs to Activity through User
+Vehicle.belongsTo(Activity, {
+    through: User,
+    foreignKey: 'vehicle_id'
 });
 
-Vehicle.hasMany(Activity, {
-    foreignKey: 'activity_id',
-    onDelete: 'SET NULL'
-})
-
-Vehicle.belongsToMany(Activity, {
-    foreignKey: 'activity_id'
-});
-
-// Post.hasMany(Comment, {
-//     foreignKey: 'post_id'
-// });
-
-
-module.exports = { User, Activity, Fuel, Comment };
+module.exports = { User, Activity, Comment, };

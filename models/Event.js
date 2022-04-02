@@ -16,7 +16,7 @@ Event.init({
         allowNull: false
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
         validate: {
             len: [4, 1000]
@@ -27,32 +27,25 @@ Event.init({
         allowNull: false,
     },
     time_begin: {
-        type: DataTypes.STRING,
+        type: DataTypes.DATE,
         allowNull: false,
-        // validate: {
-        //     max: 20,                  // only allow values <= 20
-        // }
     },
     time_end: {
-        type: DataTypes.STRING,
+        type: DataTypes.DATE,
         allowNull: false,
-        // validate: {
-        //     min: 20,                  // only allow values <= 20
-        // }
     },
     event_reviews: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: DataTypes.TEXT,
     },
     max_participants: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
             max: 20,                  // only allow values <= 20
         }
     },
     min_participants: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
             min: 20,                  // only allow values <= 20
@@ -62,6 +55,13 @@ Event.init({
         type: DataTypes.INTEGER,
         references: {
             model: 'user',
+            key: 'id'
+        }
+    },
+    comment_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'comment',
             key: 'id'
         }
     }
