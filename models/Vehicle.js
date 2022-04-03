@@ -58,13 +58,6 @@ Vehcile.init({
             model: 'user',
             key: 'id'
         }
-    },
-    activity_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'activity',
-            key: 'id'
-        }
     }
 }, {
     sequelize,

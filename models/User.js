@@ -54,7 +54,15 @@ User.init({
             // this means the password must be at least four characters long
             len: [4]
         }
-    }
+    },
+    location_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'location',
+            key: 'id'
+        }
+    },
+
 }, {
     hooks: {
         //set up beforeCreate lifecycle "hook" functionality
