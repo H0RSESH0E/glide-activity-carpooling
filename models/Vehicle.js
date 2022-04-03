@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 class Vehicle extends Model {}
 
 // create fields/columns for Vehicle model
-Vehcile.init({
+Vehicle.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -41,19 +41,16 @@ Vehcile.init({
         //     min: 20,                  // only allow values <= 20
         // }
     },
-    driver: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
     max_passengers: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
             max: 4,                  // only allow values <= 4
         }
     },
-    user_id: {
+    driver_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'user',
             key: 'id'

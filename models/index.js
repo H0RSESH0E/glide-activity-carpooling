@@ -1,6 +1,5 @@
 // import all models
 const Activity = require('./Activity');
-const Fuel = require('./Fuel');
 const User = require('./User');
 const Vehicle = require('./Vehicle');
 const Event = require('./Event');

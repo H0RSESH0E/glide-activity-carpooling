@@ -3,7 +3,7 @@ const { Vehicle, Activity, User, Comment, Event, Location, } = require('../../mo
 
 // GET /api/vehicle
 router.get('/', (req, res) => {
-    // Access our Vehicle model and run .findAll() method to find all users
+    // Access our Vehicle model and run .findAll() method to find all vehicles
     Vehicle.findAll({
         include: [
         {
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
         }
     ]
     })
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbVehicleData => res.json(dbVehicleData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -26,37 +26,37 @@ router.get('/', (req, res) => {
 // GET /api/vehicle/1
 router.get('/:id', (req, res) => {
     // Query operation to find one vehicle
-    User.findOne({
+    Vehicle.findOne({
         attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
         },
         include: [
             {
-                model: Post,
-                attributes: ['id', 'title', 'post_url', 'created_at']
+                model: Location,
+                attributes: ['street_number', 'street', 'city', 'province', 'postal_code']
             },
             {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'created_at'],
                 include: {
-                    model: Post,
-                    attributes: ['title']
+                    model: Activity,
+                    attributes: ['']
                 }
-            },
-            {
-                model: Post,
-                attributes: ['title'],
-                through: Vote
             }
+            // {
+            //     model: User,
+            //     attributes: [''],
+            //     through: 
+            // }
         ]
     })
-    .then(dbUserData => {
-        if (!dbUserData) {
-            res.status(404).json({ message: 'No user found with this id' });
+    .then(dbVehicleData => {
+        if (!dbVehicleData) {
+            res.status(404).json({ message: 'No vehicle found with this id' });
             return;
         }
-        res.json(dbUserData);
+        res.json(dbVehicleData);
     })
     .catch(err => {
         console.log(err);
@@ -66,13 +66,15 @@ router.get('/:id', (req, res) => {
 
 // POST /api/vehicle
 router.post('/', (req, res) => {
-    // Query operation to create a user
-    User.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password
+    // Query operation to create a vehicle
+    Vehicle.create({
+        year: req.body.year,
+        make: req.body.make,
+        model: req.body.model,
+        fuel_eco: req.body.fuel_eco,
+        driver: req.body.driver
     })
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbVehicleData => res.json(dbVehicleData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -82,18 +84,18 @@ router.post('/', (req, res) => {
 // PUT /api/vehicle/1
 router.put('/:id', (req, res) => {
     // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
-    User.update(req.body, {
+    Vehicle.update(req.body, {
         individualHooks: true,
         where: {
             id: req.params.id
         }
     })
-    .then(dbUserData => {
-        if (!dbUserData[0]) {
-            res.status(404).json({ message: 'No user found with this id' });
+    .then(dbVehicleData => {
+        if (!dbVehicleData[0]) {
+            res.status(404).json({ message: 'No vehicle found with this id' });
             return;
         }
-        res.json(dbUserData);
+        res.json(dbVehicleData);
     })
     .catch(err => {
         console.log(err);
@@ -103,17 +105,17 @@ router.put('/:id', (req, res) => {
 
 // DELETE /api/vehicle/1
 router.delete('/:id', (req, res) => {
-    User.destroy({
+    Vehicle.destroy({
         where: {
             id: req.params.id
         }
     })
-    .then(dbUserData => {
-        if (!dbUserData) {
-            res.status(404).json({ message: 'No user found with this id.' });
+    .then(dbVehicleData => {
+        if (!dbVehicleData) {
+            res.status(404).json({ message: 'No vehicle found with this id.' });
             return;
         }
-        res.json(dbUserData);
+        res.json(dbVehicleData);
     })
     .catch(err => {
         console.log(err);
