@@ -64,6 +64,13 @@ Event.init({
             model: 'comment',
             key: 'id'
         }
+    },
+    driver_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
+        }
     }
 }, {
     sequelize,

@@ -6,7 +6,7 @@
 //     }
 // };
 
-const models = require('../../models');
+const models = require('../models');
 
 function withAuth(email, password) {
     new Promise((resolve, reject) => {

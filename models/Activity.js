@@ -64,13 +64,6 @@ Activity.init({
         default: {
             min: 1,                  // only allow values => 1
         }
-    },
-    driver_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'user',
-            key: 'id'
-        }
     }
 }, {
     sequelize,

@@ -3,11 +3,20 @@ const path = require('path');
 
 // index.html - landing page
 router.get('/', (req, res) => {
+    console.log(req.session);
+
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-// login page
+// login.html - login page
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
 
+    res.sendFile(path.join(__dirname, '../public/login.html'));
+})
 // 
 
 // about-us.html

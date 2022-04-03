@@ -1,3 +1,4 @@
+const router = require('express').Router();
 const { User, Activity, Vehicle, Comment, Event, Location, } = require('../../models');
 
 // GET /api/users
@@ -15,6 +16,14 @@ router.get('/', (req, res) => {
 
 // GET /api/users/1
 router.get('/:id', (req, res) => {
+    // confirm how many times a user visits page
+    if(!req.session.views){
+        req.session.views = 1;
+        console.log('This is your first visit')
+    } else {
+        req.session.views++
+        console.log(`You have visited ${req.session.views} times`)
+    }
     // Query operation to find one user
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -63,11 +72,15 @@ router.post('/', (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    .then(dbUserData => {
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username - dbUserData.username;
+            req.session.loggedIn = true;
+
+            res.json(dbUserData);
+        });
+    })
 });
 
 // POST /api/login
@@ -91,7 +104,13 @@ router.post('/login', (req, res) => {
             return;
         }
 
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username - dbUserData.username;
+            req.session.loggedIn = true;
+    
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        });
     });
 });
 
