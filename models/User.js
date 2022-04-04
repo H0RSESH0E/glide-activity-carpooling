@@ -43,7 +43,8 @@ User.init({
         unique: true,
         // if allowNull is set to false, we can run our data through validators before creating the table data
         validate: {
-            isEmail: true
+            isEmail: true,
+            notEmpty: true
         }
     },
     // define a password column
@@ -61,8 +62,7 @@ User.init({
             model: 'location',
             key: 'id'
         }
-    },
-
+    }
 }, {
     hooks: {
         //set up beforeCreate lifecycle "hook" functionality

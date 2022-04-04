@@ -20,9 +20,9 @@ Comment.init({
     image: {
         type: DataTypes.STRING,
         allowNull: false,
-        // validate: {
-        //     isUrl: true,              // checks for url format
-        // }
+        validate: {
+            isUrl: true,              // checks for url format
+        }
     },
     user_id: {
         type: DataTypes.INTEGER,

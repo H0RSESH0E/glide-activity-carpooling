@@ -35,11 +35,15 @@ Vehicle.init({
         }
     },
     fuel_eco: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
         // validate: {
         //     min: 20,                  // only allow values <= 20
         // }
+    },
+    color: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     max_passengers: {
         type: DataTypes.INTEGER,

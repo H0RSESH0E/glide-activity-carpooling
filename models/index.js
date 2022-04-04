@@ -11,10 +11,8 @@ const UserEveJunc = require('./UserEveJunc');
 
 
 
-// create associations
-
-// VEHICLE
-Vehicle.belongsTo(User, {
+// Users have many Activities
+User.hasMany(Activity, {
     foreignKey: 'user_id'
 });
 
@@ -38,9 +36,10 @@ User.belongsToMany(Event, {
     foreignKey: 'user_id'
 });
 
-User.belongsToMany(Activity, {
-    through: UserActJunc,
-    foreignKey: 'user_id'
+// VEHICLE
+// Vehicle belongs to a User
+Vehicle.belongsTo(User, {
+    foreignKey: 'vehicle_id'
 });
 
 // LOCATION

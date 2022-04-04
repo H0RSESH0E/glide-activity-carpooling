@@ -12,14 +12,7 @@ Location.init({
         primaryKey: true,
         autoIncrement: true
     },
-    street_number: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            isNumeric: true
-        }
-    },
-    street: {
+    street_address: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -27,7 +20,7 @@ Location.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    province: {
+    state: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -43,10 +36,10 @@ Location.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    location_id: {
+    event_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'user',
+            model: 'event',
             key: 'id'
         }
     },
