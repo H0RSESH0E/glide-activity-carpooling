@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class UserEveJunc extends Model { }
+class UserEveJunc extends Model {}
 
 UserEveJunc.init({
     id: {
@@ -20,7 +20,7 @@ UserEveJunc.init({
     event_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'activity',
+            model: 'event',
             key: 'id'
         }
     }

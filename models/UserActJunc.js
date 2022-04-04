@@ -20,7 +20,7 @@ UserActJunc.init({
     activity_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'event',
+            model: 'activity',
             key: 'id'
         }
     }

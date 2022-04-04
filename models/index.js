@@ -6,9 +6,7 @@ const Event = require('./Event');
 const Comment = require('./Comment');
 const Location = require('./Location');
 const UserActJunc = require('./UserActJunc');
-const Participant = require('./Participant');
 const UserEveJunc = require('./UserEveJunc');
-
 
 
 // Users have many Activities
@@ -20,10 +18,6 @@ User.hasMany(Activity, {
 User.hasMany(Vehicle, {
     foreignKey: "user_id",
     onDelete: "cascade"
-});
-
-User.belongsTo(Location, {
-    foreignKey: 'location_id'
 });
 
 User.hasMany(Comment, {
@@ -45,17 +39,18 @@ Vehicle.belongsTo(User, {
 // LOCATION
 
 Location.belongsTo(Event, {
-    foreignKey: 'event_id'
+    foreignKey: 'location_id'
 });
 
 // EVENT
 Event.belongsToMany(User, {
-    through: UserActJunc,
+    through: UserEveJunc,
     as: 'chosen_activities',
     foreignKey: 'event_id'
 });
 
 Event.hasOne(Location, {
+    as: 'Testing',
     foreignKey: 'event_id'
 });
 
@@ -64,7 +59,7 @@ Event.hasMany(Comment, {
     onDelete: "cascade"
 });
 
-Event.hasMany(User, {
+Event.belongsToMany(User, {
     through: UserEveJunc,
     foreignKey: "event_id",
     onDelete: "cascade"
@@ -72,25 +67,13 @@ Event.hasMany(User, {
 
 Event.belongsTo(Activity, {
     foreignKey: 'activity_id'
-})
-
-// // ACTIVITY --- This might be used later
-// Activity.belongsToMany(User, {
-//     through: UserActJunc,
-//     as: 'chosen_activities',
-//     foreignKey: 'activity_id'
-// });
+});
 
 // COMMENT
 
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'cascade'
-})
-
-Comment.belongsTo(Event, {
-    foreignKey
-})
-
+});
 
 module.exports = { User, Activity, Comment, };

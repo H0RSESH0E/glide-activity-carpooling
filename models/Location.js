@@ -42,7 +42,14 @@ Location.init({
             model: 'event',
             key: 'id'
         }
-    },
+    }
+    // location_id: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //         model: 'user',
+    //         key: 'id'
+    //     }
+    // },
 }, {
     sequelize,
     freezeTableName: true,

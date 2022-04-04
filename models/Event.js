@@ -76,7 +76,7 @@ Event.init({
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'event'
+    modelName: 'activity'
 });
 
 module.exports = Event;

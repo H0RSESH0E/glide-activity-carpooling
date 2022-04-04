@@ -6,6 +6,8 @@ const commentdata = [
         comment_text: faker.lorem.paragraph(3),
         // Returns a random image url.
         image: faker.random.image()
+        // user_id: 
+        // event_id: 
     }
 ];
 

@@ -4,6 +4,7 @@ const seedComment = require('./comment-seeds');
 const seedActivity = require('./activity-seeds');
 const seedLocation = require('./location-seeds');
 const seedVehicle = require('./vehicle-seeds');
+const seedParticipant = require('./participant-seeds');
 
 const sequelize = require('../config/connection');
 
@@ -26,6 +27,9 @@ const seedAll = async () => {
     console.log('--------------');
 
     await seedVehicle();
+    console.log('--------------');
+
+    await seedParticipant();
     console.log('--------------');
 
     process.exit(0);
