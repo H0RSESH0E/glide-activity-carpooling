@@ -31,13 +31,13 @@ Comment.init({
             key: 'id'
         }
     },
-    event_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'event',
-            key: 'id'
-        }
-    }
+    // event_id: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //         model: 'event',
+    //         key: 'id'
+    //     }
+    // }
 }, {
     sequelize,
     freezeTableName: true,

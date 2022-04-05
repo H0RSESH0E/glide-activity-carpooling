@@ -1,11 +1,5 @@
 const { Activity } = require('../models');
 
-// Note: 
-// * risk level based on 1-5 (1 being low risk, 5 beign highest risk)
-// * maximum participants set to 20 for all activities
-// * minimum participants set to 1 for all activities
-
-// Activity Seed Data
 const activitydata = [
   {
     activity_name: 'Jogging',

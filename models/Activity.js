@@ -43,14 +43,6 @@ Activity.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    equipment: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    season: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
     max_participants: {
         type: DataTypes.INTEGER,
         allowNull: false,

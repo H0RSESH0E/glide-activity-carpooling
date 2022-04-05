@@ -40,15 +40,20 @@ As a user I want to choose an activity and quickly look for other people also in
 
 * **Sequelize Connect Session:** provides applications with a scalable store for sessions. The express-session package’s default server-side session storage, MemoryStore, is purposely not designed for a production environment, will leak memory under most conditions, doesn’t scale past a single process, and is only meant for debugging and developing. The connect-session-sequelize package resolves these issues and is compatible with the Sequelize ORM.
 
-* **MySQL2:** 
+* **MySQL2:** is a MySQL client for Node.js with a focus on performance. This npm package allows developers to connect Node.js applications to a MySQL database.
 
 * **Dotenv:** Dotenv is a zero-dependency module that loads environment variables from a . env file into process. env . Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
 
 * **React:** Used to dynamically render components on browser and initiate functionality of the game based on user inputs.
 
-* **Bcrypt:** 
+* **Bcrypt:** is a Node.js library that allows you to hash passwords. Hashing is the process of taking input and using a mathematical formula to chop and mix it up to produce an output of a specific length. Hashing is a one-way function, meaning that it can easily convert input to a fixed-size output, but it is difficult to invert, or convert in the opposite direction. This attribute allows developers to secure passwords when authenticating users for their applications.
 
-* **Nodemon:** 
+* **Nodemon:** is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+
+* **JawsDB Add-On:** is a Heroku add-on that provides a fully functional MySQL database server for use with your Heroku application. For the our purposes, you’ll use the free Kitefin Shared pricing plan.
+
+* **Faker:** is an npm package that generates massive amounts of fake contextual data.
+
 
 ## Installation
   ```
@@ -73,18 +78,7 @@ As a user I want to choose an activity and quickly look for other people also in
   ```
 
   ```
-
-
- ** **
-  ```
-
-  ```
-
-
- ** **
-  ```
-
-  ```
+  
 
 
 ## License
@@ -102,4 +96,7 @@ This application is not open to contributors at this time.
 ## Questions
 If you have any questions please feel free to contact the developers of this project.
 ** **
-**GitHub Usernames:** kaitlynskinner
+**GitHub Usernames:** 
+KaitlynSkinner - Kaitlyn Skinner
+SpohieQuan - Sophie Quan
+MrBearSir - Oleg Dobrovolskyi

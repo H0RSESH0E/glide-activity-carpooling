@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
         comment_text: req.body.comment_text,
         image: req.body.image,
         user_id: req.body.user_id,
-        event_id: req.body.event_id
+        // event_id: req.body.event_id
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {

@@ -22,11 +22,8 @@ router.post('/', (req, res) => {
         risk_level: req.body.risk_level,
         fee: req.body.fee,
         equipment: req.body.equipment,
-        season: req.body.season,
         max_participants: req.body.max_participants,
-        min_participants: req.body.min_participants,
-        user_id: req.body.user_id,
-        location_id: req.body.location_id
+        min_participants: req.body.min_participants
     })
     .then(dbActivityData => res.json(dbActivityData))
     .catch(err => {
