@@ -21,18 +21,10 @@ Vehicle.init({
     make: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            isLowercase: true,        // checks for lowercase
-            isUppercase: true,        // checks for uppercase
-        }
     },
     model: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            isLowercase: true,
-            isUppercase: true,
-        }
     },
     fuel_eco: {
         type: DataTypes.STRING,
@@ -52,7 +44,7 @@ Vehicle.init({
             max: 4,                  // only allow values <= 4
         }
     },
-    driver_id: {
+    user_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {

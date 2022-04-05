@@ -28,28 +28,14 @@ Location.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    lattitude: {
+    latitude: {
         type: DataTypes.STRING,
         allowNull: false,
     },
     longitude: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    // event_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'event',
-    //         key: 'id'
-    //     }
-    // }
-    // location_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'user',
-    //         key: 'id'
-    //     }
-    // },
+    }
 }, {
     sequelize,
     freezeTableName: true,

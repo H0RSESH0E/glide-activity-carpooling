@@ -12,7 +12,7 @@ Activity.init({
         primaryKey: true,
         autoIncrement: true
     },
-    activity_name: {
+    title: {
         type: DataTypes.STRING,
         allowNull: false
     },

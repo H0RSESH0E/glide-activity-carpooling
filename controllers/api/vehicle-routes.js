@@ -5,8 +5,7 @@ const { Vehicle, Activity, User, Comment, Event, Location, } = require('../../mo
 router.get('/', (req, res) => {
     // Access our Vehicle model and run .findAll() method to find all vehicles
     Vehicle.findAll({
-        include: [
-        {
+        include: [{
             model: User,
             attributes: ['user_id']
         },
@@ -15,12 +14,12 @@ router.get('/', (req, res) => {
             attributes: ['street_number', 'street', 'city', 'province', 'postal_code']
         }
     ]
-    })
-    .then(dbVehicleData => res.json(dbVehicleData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+})
+.then(dbVehicleData => res.json(dbVehicleData))
+.catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
 });
 
 // GET /api/vehicle/1
@@ -31,19 +30,18 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        include: [
-            {
-                model: Location,
-                attributes: ['street_number', 'street', 'city', 'province', 'postal_code']
-            },
-            {
-                model: Comment,
-                attributes: ['id', 'comment_text', 'created_at'],
-                include: {
-                    model: Activity,
-                    attributes: ['']
-                }
+        include: [{
+            model: Location,
+            attributes: ['street_number', 'street', 'city', 'province', 'postal_code']
+        },
+        {
+            model: Comment,
+            attributes: ['id', 'comment_text', 'created_at'],
+            include: {
+                model: Activity,
+                attributes: ['']
             }
+        }
             // {
             //     model: User,
             //     attributes: [''],
