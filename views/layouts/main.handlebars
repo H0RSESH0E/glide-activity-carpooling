@@ -17,19 +17,11 @@
 </head>
 
 <body>
-  <div class="wrapper col-12 ">
-    {{> nav-bar }}
+  <div class="wrapper">
     <main>
       {{{ body }}}
     </main>
-    {{!-- <footer>
-      Thanks for visiting!
-    </footer> --}}
   </div>
-
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
 </body>
 
 </html>

@@ -15,9 +15,9 @@ function withAuth(email, password) {
         }).then(user => {
             user.verifyPassword(password, (err, isCorrect) => {
                 if (isCorrect && !err) {
-                    resolve({ success: true, message: 'User not found!', user: user});
+                    resolve({ success: true, message: 'User not found!', user: user });
                 } else {
-                    reject({success: false, message: 'User not found!'});
+                    reject({ success: false, message: 'User not found!' });
                 }
             })
         })

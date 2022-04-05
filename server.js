@@ -46,9 +46,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 // view images
 app.use(express.static('public/images'));
-
 // turn on routes
 app.use(routes);
+
 
 //turn on routes(now controllers folder)
 // app.use(require('./controllers'));

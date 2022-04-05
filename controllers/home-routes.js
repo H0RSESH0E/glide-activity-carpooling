@@ -3,40 +3,53 @@ const path = require('path');
 const sequelize = require('sequelize');
 const { Activity, User, Vehicle, Comment, Event, Location, Participant } = require('../models');
 
-// get all posts for homepage
 router.get('/', (req, res) => {
-    console.log('======================');
-    Vehicle.findAll({
-            attributes: [
-                'id',
-                'year',
-                'make',
-                'model'
-            ],
-            include: [{
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'image', 'user_id']
-                },
-                {
-                    model: User,
-                    exclude: ['password'],
-                    attributes: ['first_name', 'last_name', 'email']
-                }
-            ]
-        })
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({ plain: true }));
-
-            res.render('homepage', {
-                posts,
-                loggedIn: req.session.loggedIn
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    res.render('homepage');
 });
+
+// path for /login, if loggedIn 
+router.get('/login', (req, res) => {
+    // res.render('login');
+    res.render('login', {
+        last_name: req.user.last_name, // <-- line 10 and if I remove this it goes to line 11
+        first_name: req.user.first_name, // <-- line 10 and if I remove this it goes to line 11
+    });
+});
+
+// get all posts for homepage
+// router.get('/', (req, res) => {
+//     console.log('======================');
+//     Vehicle.findAll({
+//             attributes: [
+//                 'id',
+//                 'year',
+//                 'make',
+//                 'model'
+//             ],
+//             include: [{
+//                     model: Comment,
+//                     attributes: ['id', 'comment_text', 'image', 'user_id']
+//                 },
+//                 {
+//                     model: User,
+//                     exclude: ['password'],
+//                     attributes: ['first_name', 'last_name', 'email']
+//                 }
+//             ]
+//         })
+//         .then(dbPostData => {
+//             const posts = dbPostData.map(post => post.get({ plain: true }));
+
+//             res.render('homepage', {
+//                 posts,
+//                 loggedIn: req.session.loggedIn
+//             });
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
 
 // get single post
 // router.get('/post/:id', (req, res) => {
@@ -84,13 +97,16 @@ router.get('/', (req, res) => {
 // });
 
 // login.html - login page
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
+// router.get('/login', (req, res) => {
+//     if (req.session.loggedIn) {
+//         res.redirect('/');
+//         return;
+//     }
 
-    res.sendFile(path.join(__dirname, '../views/login.handlebars'));
+//     res.render('login')
+// });
+
+router.get('/signup', (req, res) => {
+    res.render('signup');
 });
-
 module.exports = router;
