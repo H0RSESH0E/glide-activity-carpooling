@@ -8,12 +8,8 @@ router.get('/', (req, res) => {
 });
 
 // path for /login, if loggedIn 
-router.get('/login', (req, res) => {
-    // res.render('login');
-    res.render('login', {
-        last_name: req.user.last_name, // <-- line 10 and if I remove this it goes to line 11
-        first_name: req.user.first_name, // <-- line 10 and if I remove this it goes to line 11
-    });
+router.get('/login', (req, res, user) => {
+    res.render('login');
 });
 
 // get all posts for homepage
