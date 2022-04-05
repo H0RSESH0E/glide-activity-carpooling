@@ -35,6 +35,9 @@ Vehicle.belongsTo(User, {
     foreignKey: 'vehicle_id'
 });
 
+Vehicle.hasMany(Comment, {
+    foreignKey: 'user_id'
+});
 // LOCATION
 Location.belongsTo(Event, {
     foreignKey: 'location_id'

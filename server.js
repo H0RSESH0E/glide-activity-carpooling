@@ -44,6 +44,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //to access stylesheet
 app.use(express.static(path.join(__dirname, "public")));
+// view images
+app.use(express.static('public/images'));
 
 // turn on routes
 app.use(routes);
