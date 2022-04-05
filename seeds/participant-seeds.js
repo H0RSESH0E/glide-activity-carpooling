@@ -1,4 +1,6 @@
 const { Participant, User, Comment } = require('../models');
+const { faker } = require('@faker-js/faker');
+
 
 const participantdata = [
     { 

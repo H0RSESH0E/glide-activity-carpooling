@@ -1,4 +1,6 @@
 const { Comment } = require('../models');
+const { faker } = require('@faker-js/faker');
+
 
 const commentdata = [
     {

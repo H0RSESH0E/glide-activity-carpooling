@@ -1,4 +1,6 @@
 const { Event, User, Comment } = require('../models');
+const { faker } = require('@faker-js/faker');
+
 
 const eventdata = [
     {

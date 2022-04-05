@@ -9,6 +9,8 @@ const seedParticipant = require('./participant-seeds');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
+    console.log('------seedAll begins--------');
+
     await sequelize.sync({ force: true });
     console.log('--------------');
     await seedUser();
