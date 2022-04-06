@@ -3,7 +3,7 @@ const { Activity, User, Vehicle, Comment, Event, Location, } = require('../../mo
 
 // GET /api/activity
 router.get('/', (req, res) => {
-    Activity.findAll()
+    Activity.findAll({ include: [{ all: true, nested: true }]})
     .then(dbActivityData => res.json(dbActivityData))
     .catch(err => {
         console.log(err);
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 // POST /api/activity
 router.post('/', (req, res) => {
     Activity.create({
-        activity_name: req.body.activity_name,
+        title: req.body.activity_name,
         type: req.body.type,
         category: req.body.category,
         style: req.body.style,

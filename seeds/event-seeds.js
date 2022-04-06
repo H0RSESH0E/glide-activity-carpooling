@@ -1,19 +1,39 @@
+const { faker } = require('@faker-js/faker');
 const { Event, User, Comment } = require('../models');
+const db = require('../config/connection');
 
-const eventdata = [{
-    event_name: faker.lorem.sentence(5),
-    description: faker.lorem.paragraph(),
-    location: faker.address.cityName(),
-    time_begin: faker.time.recent('abbr'),
-    time_end: faker.time.recent('abbr'),
-    event_reviews: faker.lorem.paragraph(2),
-    max_participants: faker.random.number({ max: 20 }),
-    min_participants: faker.random.number({ min: 1 })
-        // user_id: faker.random.number(),
-        // comment_id: faker.random.number(),
-        // driver_id: faker.random.number
-}];
+const eventdata = async () => {
+    try {
+        await db.sync({ force: true });
 
-const seedEvent = () => Event.bulkCreate(eventdata);
+        let events = [];
 
-module.exports = seedEvent;
+        for (let i = 0; i < 100; i++) {
+
+            let newEvent = {
+                event_name: faker.lorem.sentence(5),
+                description: faker.lorem.paragraph(),
+                location: faker.address.cityName(),
+                time_begin: faker.time.recent('abbr'),
+                time_end: faker.time.recent('abbr'),
+                event_reviews: faker.lorem.paragraph(2),
+                max_participants: faker.datatype.number({ max: 20 }),
+                min_participants: faker.datatype.number({ min: 1 })
+                // user_id: faker.datatype.number(),
+                // comment_id: faker.datatype.number(),
+                // driver_id: faker.datatype.number() 
+            }
+
+            events.push(newEvent);
+        }
+        events.forEach(async (event) => {
+            await Event.create(event);
+        })
+    } catch (err) {
+        console.error(err);
+    }
+};
+
+// const seedEvent = () => Event.bulkCreate(eventdata);
+
+module.exports = eventdata;

@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// create our Activity model
+// create our Event model
 class Event extends Model {}
 
-// create fields/columns for Activity model
+// create fields/columns for Event model
 Event.init({
     id: {
         type: DataTypes.INTEGER,
@@ -22,10 +22,6 @@ Event.init({
             len: [4, 1000]
         }
     },
-    location: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
     time_begin: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -33,9 +29,6 @@ Event.init({
     time_end: {
         type: DataTypes.DATE,
         allowNull: false,
-    },
-    event_reviews: {
-        type: DataTypes.TEXT,
     },
     max_participants: {
         type: DataTypes.INTEGER,
@@ -51,24 +44,24 @@ Event.init({
             min: 20,                  // only allow values <= 20
         }
     },
-    user_id: {
+    creator_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'user',
             key: 'id'
         }
     },
-    comment_id: {
+    location_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'comment',
+            model: 'location',
             key: 'id'
         }
     },
-    driver_id: {
+    activity_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'user',
+            model: 'activity',
             key: 'id'
         }
     }
@@ -76,7 +69,7 @@ Event.init({
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'activity'
+    modelName: 'event'
 });
 
 module.exports = Event;

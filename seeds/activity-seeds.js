@@ -2,7 +2,7 @@ const { Activity } = require('../models');
 
 const activitydata = [
   {
-    activity_name: 'Jogging',
+    title: 'Jogging',
     type: 'exercise',
     category: 'fitness',
     style: 'physical',
@@ -14,7 +14,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Walking',
+    title: 'Walking',
     type: 'exercise',
     category: 'fitness',
     style: 'physical',
@@ -26,7 +26,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Running',
+    title: 'Running',
     type: 'exercise',
     category: 'fitness',
     style: 'physical',
@@ -38,7 +38,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Rollerblading',
+    title: 'Rollerblading',
     type: 'exercise',
     category: 'fitness',
     style: 'physical',
@@ -50,7 +50,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Football',
+    title: 'Football',
     type: 'sport',
     category: 'fitness',
     style: 'physical',
@@ -62,7 +62,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Soccer',
+    title: 'Soccer',
     type: 'sport',
     category: 'fitness',
     style: 'physical',
@@ -74,7 +74,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Tennis',
+    title: 'Tennis',
     type: 'sport',
     category: 'fitness',
     style: 'physical',
@@ -86,7 +86,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Weight Lifting',
+    title: 'Weight Lifting',
     type: 'exercise',
     category: 'fitness',
     style: 'physical',
@@ -98,7 +98,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Basketball',
+    title: 'Basketball',
     type: 'sport',
     category: 'fitness',
     style: 'physical',
@@ -110,19 +110,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Volleyball',
-    type: 'sport',
-    category: 'fitness',
-    style: 'physical',
-    license_required: 'no',
-    risk_level: 2,
-    fee: '',
-    equipment: 'yes',
-    max_participants: 20,
-    min_participants: 1
-  },
-  {
-    activity_name: 'Baseball',
+    title: 'Volleyball',
     type: 'sport',
     category: 'fitness',
     style: 'physical',
@@ -134,7 +122,19 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Rugby',
+    title: 'Baseball',
+    type: 'sport',
+    category: 'fitness',
+    style: 'physical',
+    license_required: 'no',
+    risk_level: 2,
+    fee: '',
+    equipment: 'yes',
+    max_participants: 20,
+    min_participants: 1
+  },
+  {
+    title: 'Rugby',
     type: 'sport',
     category: 'fitness',
     style: 'physical',
@@ -146,7 +146,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Lacrosse',
+    title: 'Lacrosse',
     type: 'sport',
     category: 'fitness',
     style: 'physical',
@@ -158,7 +158,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Ultimate Frisbee',
+    title: 'Ultimate Frisbee',
     type: 'sport',
     category: 'fitness',
     style: 'physical',
@@ -170,7 +170,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name: 'Golfing',
+    title: 'Golfing',
     type: 'sport',
     category: 'fitness',
     style: 'physical',
@@ -182,7 +182,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Croquet',
+    title:'Croquet',
     type: 'sport',
     category: 'fitness',
     style: 'physical',
@@ -194,7 +194,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Boating',
+    title:'Boating',
     type: 'sport',
     category: 'pleasure',
     style: 'leisure',
@@ -206,7 +206,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Sailing',
+    title:'Sailing',
     type: 'sport',
     category: 'pleasure',
     style: 'leisure',
@@ -217,7 +217,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Canoeing',
+    title:'Canoeing',
     type: 'sport',
     category: 'pleasure',
     style: 'leisure',
@@ -229,7 +229,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Kayaking',
+    title:'Kayaking',
     type: 'sport',
     category: 'pleasure',
     style: 'leisure',
@@ -241,7 +241,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Rafting',
+    title:'Rafting',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -253,7 +253,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Rowing',
+    title:'Rowing',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -265,7 +265,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Dragonboating',
+    title:'Dragonboating',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -277,7 +277,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Seadooing',
+    title:'Seadooing',
     type: 'sport',
     category: 'pleasure',
     style: 'leisure',
@@ -289,7 +289,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Swimming',
+    title:'Swimming',
     type: 'exercise',
     category: 'pleasure',
     style: 'physical',
@@ -301,7 +301,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Beach',
+    title:'Beach',
     type: 'fun',
     category: 'pleasure',
     style: 'leisure',
@@ -313,7 +313,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Surfing',
+    title:'Surfing',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -325,7 +325,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Scuba Diving',
+    title:'Scuba Diving',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -337,7 +337,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Snorkeling',
+    title:'Snorkeling',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -349,7 +349,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Bicycling',
+    title:'Bicycling',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -361,7 +361,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'ATV',
+    title:'ATV',
     type: 'sport',
     category: 'pleasure',
     style: 'leisure',
@@ -374,7 +374,7 @@ const activitydata = [
   },
   // Winter
   {
-    activity_name:'Skiing',
+    title:'Skiing',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -387,7 +387,7 @@ const activitydata = [
   },
   // Winter
   {
-    activity_name:'Snowboarding',
+    title:'Snowboarding',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -400,7 +400,7 @@ const activitydata = [
   },
   // Winter
   {
-    activity_name:'Snowmobiling',
+    title:'Snowmobiling',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -413,7 +413,7 @@ const activitydata = [
   },
   // Winter
   {
-    activity_name:'Cross-Country Skiing',
+    title:'Cross-Country Skiing',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -426,7 +426,7 @@ const activitydata = [
   },
   // Winter
   {
-    activity_name:'Snowshoeing',
+    title:'Snowshoeing',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -439,7 +439,7 @@ const activitydata = [
   },
   // All season
   {
-    activity_name:'Hunting',
+    title:'Hunting',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -452,7 +452,7 @@ const activitydata = [
   },
     // All season
   {
-    activity_name:'Fishing',
+    title:'Fishing',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -464,7 +464,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Camping',
+    title:'Camping',
     type: 'fun',
     category: 'pleasure',
     style: 'leisure',
@@ -476,7 +476,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Picnicking',
+    title:'Picnicking',
     type: 'fun',
     category: 'pleasure',
     style: 'leisure',
@@ -488,7 +488,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Barbecue',
+    title:'Barbecue',
     type: 'fun',
     category: 'pleasure',
     style: 'leisure',
@@ -500,7 +500,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Skating',
+    title:'Skating',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -512,7 +512,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Ice Hockey',
+    title:'Ice Hockey',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -524,7 +524,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Curling',
+    title:'Curling',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -536,7 +536,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Bird Watching',
+    title:'Bird Watching',
     type: 'sport',
     category: 'pleasure',
     style: 'leisure',
@@ -548,7 +548,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Photography',
+    title:'Photography',
     type: 'fun',
     category: 'pleasure',
     style: 'leisure',
@@ -560,7 +560,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Exercise',
+    title:'Exercise',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -572,19 +572,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Tai Chi',
-    type: 'sport',
-    category: 'exercise',
-    style: 'physical',
-    license_required: 'yes',
-    risk_level: 1,
-    fee: 'no',
-    equipment: 'yes',
-    max_participants: 20,
-    min_participants: 1
-  },
-  {
-    activity_name:'Yoga',
+    title:'Tai Chi',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -596,7 +584,19 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Park',
+    title:'Yoga',
+    type: 'sport',
+    category: 'exercise',
+    style: 'physical',
+    license_required: 'yes',
+    risk_level: 1,
+    fee: 'no',
+    equipment: 'yes',
+    max_participants: 20,
+    min_participants: 1
+  },
+  {
+    title:'Park',
     type: 'fun',
     category: 'pleasure',
     style: 'leisure',
@@ -608,7 +608,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Playground',
+    title:'Playground',
     type: 'fun',
     category: 'pleasure',
     style: 'leisure',
@@ -620,7 +620,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Mountain Climbing',
+    title:'Mountain Climbing',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -632,7 +632,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Geocaching',
+    title:'Geocaching',
     type: 'fun',
     category: 'exercise',
     style: 'physical',
@@ -644,7 +644,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Badminton',
+    title:'Badminton',
     type: 'sport',
     category: 'exercise',
     style: 'physical',
@@ -656,7 +656,7 @@ const activitydata = [
     min_participants: 1
   },
   {
-    activity_name:'Hiking',
+    title:'Hiking',
     type: 'sport',
     category: 'exercise',
     style: 'physical',

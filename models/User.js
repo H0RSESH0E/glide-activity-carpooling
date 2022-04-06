@@ -56,21 +56,6 @@ User.init({
             len: [4]
         }
     }
-    // event_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'event',
-    //         key: 'id'
-    //     }
-    // }
-    // location_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'location',
-    //         key: 'id'
-    //     }
-    // },
-
 }, {
     hooks: {
         //set up beforeCreate lifecycle "hook" functionality

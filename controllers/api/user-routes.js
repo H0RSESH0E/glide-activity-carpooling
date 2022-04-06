@@ -4,14 +4,14 @@ const { User, Activity, Vehicle, Comment, Event, Location, } = require('../../mo
 // GET /api/users
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method to find all users
-    User.findAll({
-            attributes: { exclude: ['password'] }
-        })
-        .then(dbUserData => res.json(dbUserData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    User.findAll({ include: [{ all: true, nested: true }]
+        // attributes: { exclude: ['password'] }
+    })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // GET /api/users/1
