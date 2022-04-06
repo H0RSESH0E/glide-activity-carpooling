@@ -1,0 +1,18 @@
+<article>
+     <a href="/dashboard"> &larr; Back to My dashboard</a>
+        <h2>Edit Profile</h2>
+    <form class="edit-profile"></form>
+    <div>
+        <input name="edit-first_name" type="text" value="{{User.first_name}}" />
+        <span>{{User.first_name}}</span>
+        |
+        <input name="edit-last-name" type="text" value="{{User.last_name}}" />
+        <span>{{User.last_name}}</span>
+        |
+        <input name="edit-email" type="text" value="{{user.email}}" />
+        <span>{{email}}</span>
+    </div>
+    <button type="submit">Save changes</button>
+  </form>
+</article>
+<script src="/javascript/edit-user.js"></script>
