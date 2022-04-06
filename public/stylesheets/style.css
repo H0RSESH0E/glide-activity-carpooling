@@ -18,14 +18,8 @@ body {
 }
 
 .nav-row {
-    justify-content: center;
-    display: flex;
-    align-items: center;
-}
-
-.web-nav li {
-    font-size: 1.6vw;
-    line-height: 2.5;
+    line-height: 3;
+    font-size: 1.3em;
 }
 
 button[type="submit"],
@@ -37,6 +31,7 @@ button[type="submit"],
     margin-top: 20px;
 }
 
+.nav-row a:hover,
 button[type="submit"]:hover,
 .btn:hover {
     color: #fd457d;
