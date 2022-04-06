@@ -17,7 +17,7 @@ const vehicledata = async () => {
                 model: faker.vehicle.model(),
                 fuel_eco: faker.vehicle.fuel(),
                 color: faker.vehicle.color(),
-                max_passengers: faker.datatype.number({ max: 20 }),
+                max_passengers: faker.datatype.number({ max: 4 }),
                 // vehicle: faker.vehicle.vehicle()
             }
 

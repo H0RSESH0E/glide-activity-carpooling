@@ -38,15 +38,14 @@ Vehicle.init({
         allowNull: false
     },
     max_passengers: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.INTEGER,my        allowNull: false,
         validate: {
             max: 4,                  // only allow values <= 4
         }
     },
     user_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        // allowNull: false,
         references: {
             model: 'user',
             key: 'id'

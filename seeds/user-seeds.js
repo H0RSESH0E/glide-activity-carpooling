@@ -21,7 +21,11 @@ const userdata = async () => {
         users.push(newUser);
         }
         users.forEach(async (user) => {
-            await User.create(user);
+            try {
+                await User.create(user);
+            } catch (e) {
+                console.log(e);
+            }
         })
     } catch (err) {
         console.error(err);
