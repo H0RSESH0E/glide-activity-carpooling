@@ -74,11 +74,10 @@ a {
 
 body {
     background-image: url(../images/background.webp);
-    height: 100%;
-    width: 100%;
+    /* height: 100%; */
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: cover; */
 }
 
 .landing-page {
@@ -148,7 +147,105 @@ input {
 }
 
 
+/* HAMBURGER MENU BAR */
+
+.header {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+.nav-menu {
+    height: 90vh;
+}
+
+
+/* .nav-item {
+    margin-left: 5rem;
+} */
+
+.nav-link {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+    display: inline;
+    line-height: 2.5;
+}
+
+.nav-link:hover {
+    color: #482ff7;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #482ff7;
+}
+
+.cell-nav-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+
 /* mobile */
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -60%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: var(--main-blue);
+        width: 60%;
+        border-radius: 10px;
+        /* text-align: center; */
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    /* .nav-item {
+        margin: 2.5rem 0;
+    } */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .navbar a {
+        font-size: 1.1em;
+    }
+}
 
 @media (max-width: 575.98px) {
     .nav-hide {
