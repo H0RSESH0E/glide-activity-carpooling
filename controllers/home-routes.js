@@ -9,62 +9,62 @@ router.get("/", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/homepage");
   } else {
-    res.render('signup', {js: ['signup.handlebars']});
+    res.render('signup', {views: ['signup.handlebars']});
   }
 });
 
 // GET method for authenticated user to homepage
 router.get('/homepage', authenticatedUser, (req, res) => {
-  res.render('homepage', {js: ['homepage.handlebars']});
+  res.render('homepage', {views: ['homepage.handlebars']});
 });
 
 // // GET method to popular activities
 // router.get('/popular-activities', authenticatedUser, (req, res) => {
 //   if (req.session.loggedIn) {
-//     res.render('popular-activities', { js: ['popular-activities.handlebars']});
+//     res.render('popular-activities', { partialsDir: ['partials/popular-activities.handlebars']});
 //   } 
 //   // else {
-//   //   res.render('login', {js: ['login.handlebars']});
+//   //   res.render('login', {views: ['login.handlebars']});
 //   // }
 // });
 
 // GET method to single event
-router.get('/single-event', authenticatedUser, (req, res) => {
+router.get('/single-event', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('single-event', { js: ['single-event.handlebars']});
+    res.render('single-event', { partials: ['single-event.handlebars']});
   } 
   // else {
-  //   res.render('login', {js: ['login.handlebars']});
+  //   res.render('login', {views: ['login.handlebars']});
   // }
 });
 
 // GET method to create vehicle
-router.get('/create-vehicle', authenticatedUser, (req, res) => {
+router.get('/create-vehicle', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('create-vehicle', { js: ['create-vehicle.handlebars']});
+    res.render('create-vehicle', { views: ['create-vehicle.handlebars']});
   } 
   // else {
-  //   res.render('login', {js: ['login.handlebars']});
+  //   res.render('login', {views: ['login.handlebars']});
   // }
 });
 
 // GET method to create events
-router.get('/create-event', authenticatedUser, (req, res) => {
+router.get('/create-event', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('create-event', { js: ['create-event.handlebars']});
+    res.render('create-event', { views: ['create-event.handlebars']});
   } 
   // else {
-  //   res.render('login', {js: ['login.handlebars']});
+  //   res.render('login', {views: ['login.handlebars']});
   // }
 });
 
 // GET method to profile edit
 router.get('/profile-edit', authenticatedUser, (req, res) => {
   if (req.session.loggedIn) {
-    res.render('profile-edit', { js: ['profile-edit.handlebars']});
+    res.render('profile-edit', { views: ['profile-edit.handlebars']});
   } 
   // else {
-  //   res.render('login', {js: ['login.handlebars']});
+  //   res.render('login', {views: ['login.handlebars']});
   // }
 });
 

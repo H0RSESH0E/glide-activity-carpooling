@@ -66,21 +66,27 @@ As a user I want to choose an activity and quickly look for other people also in
 
 ## Demos
  **Current Application Screenshots**
-
-
- ** **
-  ```
-
-  ```
-
+ ![Deployed Application](https://github.com/KaitlynSkinner/README_Generator/blob/da47d8120e21322c46e09ad64d0883add73bf3de/images/Mock-up.md.png?raw=true)
 
  ** **
   ```
-
+    Demonstartion of Website walkthrough
   ```
-  
+  [![Watch the video](https://img.youtube.com/vi/g1C2BAKRFe0/0.jpg)](https://www.youtube.com/watch?v=g1C2BAKRFe0)
 
+ ** **
+  ```
+    Demonstration of Tables being shown in MySQL Database
+  ```
+  [![Watch the video](https://img.youtube.com/vi/PNnq5kHjf7I/0.jpg)](https://www.youtube.com/watch?v=PNnq5kHjf7I)
 
+ ** **
+  ```
+    Demonstration of Starting Server
+  ```
+  [![Watch the video](https://img.youtube.com/vi/S-OiAEmeG7Y/0.jpg)](https://www.youtube.com/watch?v=S-OiAEmeG7Y)
+
+    
 ## License
 
 

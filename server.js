@@ -13,7 +13,14 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // creates instance(s) of ExpressHandlebars - allowing full access to API
-const hbs = exphbs.create({});
+const hbs = exphbs.create({
+
+	// Uses multiple partials dirs and are then shared
+	// with the client-side of the app
+	partialsDir: [
+		'views/partials/'
+	],
+});
 const helpers = require('./utils/helpers');
 const routes = require("./controllers");
 // connect to database
@@ -52,6 +59,10 @@ app.use(routes);
 
 //turn on routes(now controllers folder)
 // app.use(require('./controllers'));
+
+app.get('/', (req, res) => {
+    res.render('home', {title: "homepage"})
+});
 
 // turn on connection to db and server
 // *** Note: force: true used when updating any model data
