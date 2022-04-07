@@ -278,11 +278,21 @@ header {
         font-size: 1rem;
     }
     button[type="submit"] {
-        width: 30%;
+        width: 50%;
+        text-align: center;
     }
     body {
         min-height: 100%;
         background-size: auto;
+    }
+    main {
+        margin: 20px;
+        padding: 20px;
+        height: 100vh;
+        background-color: #fff;
+    }
+    button .btn {
+        padding: 20px;
     }
 }
 
