@@ -11,6 +11,13 @@ const userdata = async () => {
 
         for (let i = 0; i < 100; i++) {
 
+            let testUser = {
+                first_name 'Jane',
+                last_name: 'Doe',
+                email: 'janedoe@email.com',
+                password: 'password1'
+            }
+
             let newUser = {
                 first_name: faker.name.firstName(),
                 last_name: faker.name.lastName(),
@@ -18,7 +25,7 @@ const userdata = async () => {
                 password: faker.internet.password()
             }
 
-        users.push(newUser);
+        users.push(newUser, testUser);
         }
         users.forEach(async (user) => {
             await User.create(user);

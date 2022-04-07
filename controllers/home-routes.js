@@ -7,23 +7,15 @@ const { Activity, User, Vehicle, Comment, Event, Location, Participant } = requi
 // GET Method for all activities
 router.get('/activities', (req, res) => {
   console.log('======================');
-  Activity.findAll()
-    .then(activities => {
-      // create new array of activities
-      const activityInput = [
-        [], [], [], [], [], [], [], [], [], []
-      ];
-      // const activities = dbActivityData.map(activity => activity.get({ plain: true }));
-
-      // loop over all Activities
-      activities.forEach((Activity) => {
-        activityInput.push(Activity);
-      });
+  Activity.findAllUser.findAll({ include: [{ all: true, nested: true }]
+      })
+      .then(dbActivityData => res.json(dbActivityData))
+      
+      
       res.render('activties', {
         activities,
         loggedIn: req.session.loggedIn
-      });
-    })
+      })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -59,14 +51,14 @@ router.post('/activities', (req, res) => {
 });
 
 // login.html - login page
-// router.get('/login', (req, res) => {
-//     if (req.session.loggedIn) {
-//         res.redirect('/dashboard');
-//         return;
-//     }
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/dashboard');
+        return;
+    }
 
-//     res.render('login')
-// });
+    res.render('login')
+});
 
 router.get('/signup', (req, res) => {
     res.render('signup');
