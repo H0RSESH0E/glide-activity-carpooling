@@ -95,7 +95,7 @@ As a user I want to choose an activity and quickly look for other people also in
   ```
     Demonstartion of Website walkthrough
   ```
-  [![Watch the video](https://img.youtube.com/vi/g1C2BAKRFe0/0.jpg)](https://www.youtube.com/watch?v=g1C2BAKRFe0)
+  [![Watch the video](https://img.youtube.com/vi/28hG1lqfG4M/0.jpg)](https://www.youtube.com/watch?v=28hG1lqfG4M)
 
  ** **
   ```
