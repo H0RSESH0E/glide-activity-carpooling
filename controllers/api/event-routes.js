@@ -32,16 +32,11 @@ router.get('/:id', (req, res) => {
                     model: Vehicle,
                     attributes: ['year', 'make', 'model']
                 }
-            //     {
-            //         moderl: Activity,
-            //         attributes: ['']
-            //     }
+            },
+            {
+                moderl: Activity,
+                attributes: ['title', 'type', 'category', 'style', 'license_required', 'risk_level', 'fee', 'equipment', 'max_participants', 'min_participants']
             }
-            // {
-            //     model: Vehicle,
-            //     attributes: [''],
-            //     through: User
-            // }
         ]
     })
     .then(dbEventData => {
@@ -63,14 +58,14 @@ router.post('/', (req, res) => {
     Event.create({
         event_name: req.body.event_name,
         description: req.body.description,
-        location: req.body.location,
         time_begin: req.body.time_begin,
         time_end: req.body.time_end,
         event_reviews: req.body.event_reviews,
         max_participants: req.body.max_participants,
         min_participants: req.body.min_participants,
+        creator_id: req.body.creator_id,
         user_id: req.body.user_id,
-        comment_id: req.body.comment_id
+        activity_id: req.body.activity_id
     })
     .then(dbEventData => res.json(dbEventData))
     .catch(err => {

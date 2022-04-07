@@ -15,7 +15,7 @@ const locationdata = async () => {
                 city: faker.address.cityName(),
                 state: faker.address.state(),
                 postal_code: faker.address.zipCodeByState(),
-                lattitude: faker.address.lattitude(),
+                latitude: faker.address.latitude(),
                 longitude: faker.address.longitude(),
             }
 

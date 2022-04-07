@@ -15,6 +15,7 @@ const commentdata = async () => {
                 comment_text: faker.lorem.paragraph(3),
                 // Returns a random image url.
                 image: faker.image.nature(),
+                event_id: Math.random() * 10 + 1,
                 user_id: Math.random() * 10 + 1
             }
 
