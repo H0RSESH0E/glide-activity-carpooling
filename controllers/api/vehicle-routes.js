@@ -4,22 +4,13 @@ const { Vehicle, Activity, User, Comment, Event, Location, } = require('../../mo
 // GET /api/vehicle
 router.get('/', (req, res) => {
     // Access our Vehicle model and run .findAll() method to find all vehicles
-    Vehicle.findAll({
-        include: [{
-            model: User,
-            attributes: ['user_id']
-        },
-        {
-            model: Location,
-            attributes: ['street_number', 'street', 'city', 'province', 'postal_code']
-        }
-    ]
-})
-.then(dbVehicleData => res.json(dbVehicleData))
-.catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-});
+    Vehicle.findAll({ include: [{ all: true, nested: true }]
+    })
+    .then(dbVehicleData => res.json(dbVehicleData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // GET /api/vehicle/1
