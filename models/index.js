@@ -21,7 +21,7 @@ User.hasMany(Vehicle, {
 
 User.hasMany(Comment, {
     foreignKey: "user_id",
-    onDelete: "SET NULL"
+    // onDelete: "SET NULL"
 });
 
 User.hasMany(Event, {
@@ -68,7 +68,7 @@ Event.belongsTo(Location, {
 // COMMENT
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
-    onDelete: 'cascade',
+    onDelete: "cascade"
 });
 
 Comment.belongsTo(Event, {
