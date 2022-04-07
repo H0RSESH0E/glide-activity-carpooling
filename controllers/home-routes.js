@@ -15,7 +15,6 @@ router.get('/activities', (req, res) => {
       ];
       // const activities = dbActivityData.map(activity => activity.get({ plain: true }));
 
-<<<<<<< HEAD
       // loop over all Activities
       activities.forEach((Activity) => {
         activityInput.push(Activity);
@@ -29,48 +28,47 @@ router.get('/activities', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-=======
-// path for /login, if loggedIn 
-router.get('/login', (req, res) => {
+  });
+  // path for /login, if loggedIn 
+  router.get('/login', (req, res) => {
     res.render('login');
->>>>>>> feature/nav-bar
-});
+  });
 
-// POST Method for Activities
-router.post('/activities', (req, res) => {
-  db.Activity.create(
-    req.body
-  )
-    .then(dbActivityData => {
-      if (!dbActivityData) {
-        res.status(404).json({ message: 'No activity found with this id' });
-        return;
-      }
+  // POST Method for Activities
+  router.post('/activities', (req, res) => {
+    db.Activity.create(
+      req.body
+    )
+      .then(dbActivityData => {
+        if (!dbActivityData) {
+          res.status(404).json({ message: 'No activity found with this id' });
+          return;
+        }
 
-      const activity = dbActivityData.get({ plain: true });
+        const activity = dbActivityData.get({ plain: true });
 
-      res.render('single-activity', {
-        activity,
-        loggedIn: req.session.loggedIn
+        res.render('single-activity', {
+          activity,
+          loggedIn: req.session.loggedIn
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
       });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+  });
 
-// login.html - login page
-// router.get('/login', (req, res) => {
-//     if (req.session.loggedIn) {
-//         res.redirect('/dashboard');
-//         return;
-//     }
+  // login.html - login page
+  // router.get('/login', (req, res) => {
+  //     if (req.session.loggedIn) {
+  //         res.redirect('/dashboard');
+  //         return;
+  //     }
 
-//     res.render('login')
-// });
+  //     res.render('login')
+  // });
 
-router.get('/signup', (req, res) => {
+  router.get('/signup', (req, res) => {
     res.render('signup');
-});
-module.exports = router
+  });
+  module.exports = router

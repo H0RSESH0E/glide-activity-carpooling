@@ -10,7 +10,8 @@ const UserEveJunc = require('./UserEveJunc');
 
 // USER
 // Users have many Activities
-User.hasMany(Activity, {
+User.belongsToMany(Activity, {
+    through: UserActJunc,
     foreignKey: 'user_id'
 });
 
@@ -24,7 +25,7 @@ User.hasMany(Comment, {
     onDelete: "SET NULL"
 });
 
-User.hasMany(Event, {
+User.belongsToMany(Event, {
     through: UserEveJunc,
     foreignKey: 'user_id'
 });
@@ -61,7 +62,7 @@ Event.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Event.hasMany(User, {
+Event.belongsToMany(User, {
     through: 'UserEveJunc',
     foreignKey: 'event_id'
 })
@@ -74,9 +75,10 @@ Event.hasMany(Comment, {
     foreignKey: 'comment_id'
 });
 
-Event.hasOne(Vehicle, {
-    foreignKey: 'vehicle_id'
-});
+
+// Event.hasOne(Vehicle, {
+//     foreignKey: 'vehicle_id'
+// });
 
 // COMMENT
 Comment.belongsTo(User, {
