@@ -4,60 +4,72 @@
         <h1>Hi {{{User.last_name}}}{{User.first_name}}!</h1>
 
         {{/if}}
+
+
         <hr>
         <div class="row nav-row">
-            <div class="col-lg-2 col-sm-2">
-                <img src="star-icon.svg" width="18vw" alt="">
-            </div>
-            <div class="col-lg-10 col-sm-10">
-                <li><a href="/">Popular Activities</a></li>
-            </div>
-            <div class="col-lg-2 col-sm-2">
-                <img src="star-icon.svg" width="18vw" alt="">
-            </div>
-            <div class="col-lg-10 col-sm-10">
-                <li><a href="/">Choose an Event</a></li>
-            </div>
-            <div class="col-lg-2 col-sm-2">
-                <img src="vehicle-cab-icon.svg" width="18vw" alt="">
-            </div>
-            <div class="col-lg-10 col-sm-10">
-                <li><a href="/">Create a Vehicle</a></li>
-            </div>
-            <div class="col-lg-2 col-sm-2">
-                <img src="vehicle-cab-icon.svg" width="18vw" alt="">
-            </div>
-            <div class="col-lg-10 col-sm-10">
-                <li><a href="/">Create an Event</a></li>
-            </div>
-            <div class="col-lg-2 col-sm-2">
-                <img src="profile-icon.svg" width="18vw" alt="">
-            </div>
-            <div class="col-lg-10 col-sm-10">
-                <li><a href="/">Edit Profile</a></li>
-            </div>
+            <img src="star-icon.svg" alt="" class="col-lg-2 col-sm-2">
+            <a href="/" class="col-lg-10 col-sm-10">Popular Activities</a>
+            <img src="star-icon.svg" alt="" class="col-lg-2 col-sm-2">
+            <a href="/" class="col-lg-10 col-sm-10">Choose an Event</a>
+            <img src="vehicle-cab-icon.svg" alt="" class="col-lg-2 col-sm-2">
+            <a href="/" class="col-lg-10 col-sm-10">Create a Vehicle</a>
+            <img src="vehicle-cab-icon.svg" alt="" class="col-lg-2 col-sm-2">
+            <a href="/" class="col-lg-10 col-sm-10">Create an Event</a>
+            <img src="profile-icon.svg" alt="" class="col-lg-2 col-sm-2">
+            <a href="/" class="col-lg-10 col-sm-10">Edit Profile</a>
             {{#if loggedIn}}
-            <div class="col-lg-2 col-sm-2">
-                <img src="profile-icon.svg" width="18vw" alt="">
-            </div>
-            <div class="col-lg-10 col-sm-10">
-                <li><a href="/signout">Sign Out</a></li>
-            </div>
+            <img src="profile-icon.svg" alt="" class="col-lg-2 col-sm-2">
+            <a href="/signout" class="col-lg-10 col-sm-10">Sign Out</a>
             {{/if}}
         </div>
-        <a href="/dashboard" class="web-logo"><img src="logo.svg" alt="Glide carpool app logo" width="200vw"></a>
+        <a href="/dashboard" class="web-logo"><img src="logo.svg" alt="Glide carpool app logo" width="200px"></a>
     </nav>
-    <nav class="cell-nav">
-
-        <div class="nav-row">
-            <a href="/dashboard" class="cell-logo col-5"><img src="logo.svg" alt="Glide carpool app logo"
-                    width="100vw"></a>
-            <div class="col-4">
-                <li><a href="/">Choose an Event</a></li>
+    <div class="navbar">
+        <div class="cell-nav-header ">
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-            <div class="col-3">
-                <li><a href="/">Edit Profile</a></li>
-            </div>
+            <a href="/dashboard"><img src="logo.svg" alt="Glide carpool app logo" width="130vw"></a>
+            <a href="/">Events</a>
+            <a href="/">Profile</a>
         </div>
-    </nav>
+        <ul class="nav-menu">
+            {{#if loggedIn}}
+            <h1>{{{User.last_name}}}{{User.first_name}}</h1>
+
+            {{/if}}
+            <hr>
+            <div class="nav-item">
+                <img class="col-lg-2 col-sm-2" src="star-icon.svg" width="18vw" alt="">
+                <a href="/" class="col-lg-10 col-sm-10 nav-link">Popular Activities</a>
+            </div>
+            <div class="nav-item">
+                <img class="col-lg-2 col-sm-2" src="star-icon.svg" width="18vw" alt="">
+                <a href="/" class="col-lg-10 col-sm-10 nav-link">Choose an Event</a>
+            </div>
+            <div class="nav-item">
+                <img class="col-lg-2 col-sm-2" src="vehicle-cab-icon.svg" width="18vw" alt="">
+                <a href="/" class="col-lg-10 col-sm-10 nav-link">Create a Vehicle</a>
+            </div>
+            <div class="nav-item">
+                <img class="col-lg-2 col-sm-2" src="vehicle-cab-icon.svg" width="18vw" alt="">
+                <a href="/" class="col-lg-10 col-sm-10 nav-link">Create an Event</a>
+            </div>
+            <div class="nav-item">
+                <img class="col-lg-2 col-sm-2" src="profile-icon.svg" width="18vw" alt="">
+                <a href="/" class="col-lg-10 col-sm-10 nav-link">Edit Profile</a>
+            </div>
+            {{#if loggedIn}}
+            <div class="nav-item">
+                <img class="col-lg-2 col-sm-2" src="profile-icon.svg" width="18vw" alt="">
+                <a href="/" class="col-lg-10 col-sm-10" href="/signout" class="nav-link">Sign Out</a>
+            </div>
+            {{/if}}
+    </div>
+    </ul>
+    </div>
 </header>
+<script src="/javascript/nav-bar.js"></script>

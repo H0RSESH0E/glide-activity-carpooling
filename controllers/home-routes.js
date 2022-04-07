@@ -15,6 +15,7 @@ router.get('/activities', (req, res) => {
       ];
       // const activities = dbActivityData.map(activity => activity.get({ plain: true }));
 
+<<<<<<< HEAD
       // loop over all Activities
       activities.forEach((Activity) => {
         activityInput.push(Activity);
@@ -28,6 +29,11 @@ router.get('/activities', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+=======
+// path for /login, if loggedIn 
+router.get('/login', (req, res) => {
+    res.render('login');
+>>>>>>> feature/nav-bar
 });
 
 // POST Method for Activities
@@ -57,7 +63,7 @@ router.post('/activities', (req, res) => {
 // login.html - login page
 // router.get('/login', (req, res) => {
 //     if (req.session.loggedIn) {
-//         res.redirect('/');
+//         res.redirect('/dashboard');
 //         return;
 //     }
 
@@ -67,4 +73,4 @@ router.post('/activities', (req, res) => {
 router.get('/signup', (req, res) => {
     res.render('signup');
 });
-module.exports = router;
+module.exports = router
