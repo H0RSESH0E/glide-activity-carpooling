@@ -66,7 +66,7 @@ As a user I want to choose an activity and quickly look for other people also in
 
 ## Demos
  **Current Application Screenshots**
- ![Deployed Application](https://github.com/KaitlynSkinner/README_Generator/blob/da47d8120e21322c46e09ad64d0883add73bf3de/images/Mock-up.md.png?raw=true)
+ ![Deployed Application](?raw=true)
 
  ** **
   ```
