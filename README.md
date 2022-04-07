@@ -66,7 +66,30 @@ As a user I want to choose an activity and quickly look for other people also in
 
 ## Demos
  **Current Application Screenshots**
- ![Deployed Application](?raw=true)
+ ```
+  Homepage
+ ```
+ ![Deployed Application](https://github.com/SophieQuan/glide-carpool-app/blob/b1a1018d90fa216e05ab42e83c44e1a0ccf92e2a/public/videos/homepage.png?raw=true)
+
+```
+  Signup Page 
+```
+ ![Deployed Application](https://github.com/SophieQuan/glide-carpool-app/blob/b1a1018d90fa216e05ab42e83c44e1a0ccf92e2a/public/videos/signup.png?raw=true)
+
+```
+  Create Event Page
+```
+![Deployed Application](https://github.com/SophieQuan/glide-carpool-app/blob/b1a1018d90fa216e05ab42e83c44e1a0ccf92e2a/public/videos/create-event.png?raw=true)
+
+```
+  Create Vehicle Page
+```
+![Deployed Application](https://github.com/SophieQuan/glide-carpool-app/blob/b1a1018d90fa216e05ab42e83c44e1a0ccf92e2a/public/videos/create-vehicle.png?raw=true)
+
+```
+  Profile Edit Page
+```
+![Deployed Application](https://github.com/SophieQuan/glide-carpool-app/blob/b1a1018d90fa216e05ab42e83c44e1a0ccf92e2a/public/videos/profile-edit.png?raw=true)
 
  ** **
   ```
