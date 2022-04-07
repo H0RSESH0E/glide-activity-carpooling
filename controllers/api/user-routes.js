@@ -90,11 +90,11 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
-            email: req.body.email,
+            email: req.body.email
         }
     }).then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'No user with that username!' });
+            res.status(400).json({ message: 'No user with that email!' });
             return;
         }
 
@@ -109,8 +109,6 @@ router.post('/login', (req, res) => {
             // declare session variables
             req.session.user_id = dbUserData.id;
             req.session.email = dbUserData.email;
-            req.session.first_name = dbUserData.first_name;
-            req.session.last_name = dbUserData.last_name;
             req.session.loggedIn = true;
 
             res.json({ user: dbUserData, message: 'You are now logged in!' });
@@ -159,5 +157,13 @@ router.delete('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
+});
 module.exports = router;

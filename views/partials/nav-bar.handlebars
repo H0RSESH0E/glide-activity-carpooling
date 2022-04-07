@@ -1,9 +1,10 @@
 <header class="col-lg-3 col-md-4 col-sm-5">
     <nav class="nav-hide web-nav">
-        {{#if loggedIn}}
-        <h1>{{{User.last_name}}}{{User.first_name}}</h1>
-
+        {{#if user}}
+        <p>Hello {{user.email}}</p>
         {{/if}}
+
+
         <hr>
         <div class="row nav-row">
             <img src="star-icon.svg" alt="" class="col-lg-2 col-sm-2">
@@ -31,8 +32,8 @@
                 <span class="bar"></span>
             </div>
             <a href="/dashboard"><img src="logo.svg" alt="Glide carpool app logo" width="130vw"></a>
-            <a href="/">Choose an Event</a>
-            <a href="/">Edit Profile</a>
+            <a href="/">Events</a>
+            <a href="/">Profile</a>
         </div>
         <ul class="nav-menu">
             {{#if loggedIn}}
