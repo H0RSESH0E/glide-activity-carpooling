@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const res = require('express/lib/response');
 const path = require('path');
-const db = require('../models');
+const { Activity, User, Vehicle, Comment, Event, Location, Participant } = require('../models');
 
 // GET Method for all activities
 router.get('/activities', (req, res) => {
@@ -15,12 +15,11 @@ router.get('/activities', (req, res) => {
       ];
       // const activities = dbActivityData.map(activity => activity.get({ plain: true }));
 
-<<<<<<< HEAD
       // loop over all Activities
       activities.forEach((Activity) => {
         activityInput.push(Activity);
       });
-      res.render('homepage', {
+      res.render('activties', {
         activities,
         loggedIn: req.session.loggedIn
       });
@@ -29,11 +28,10 @@ router.get('/activities', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-=======
-// path for /login, if loggedIn 
-router.get('/login', (req, res) => {
+    // path for /login, if loggedIn 
+  router.get('/login', (req, res) => {
     res.render('login');
->>>>>>> feature/nav-bar
+  });
 });
 
 // POST Method for Activities
@@ -73,4 +71,5 @@ router.post('/activities', (req, res) => {
 router.get('/signup', (req, res) => {
     res.render('signup');
 });
-module.exports = router
+
+module.exports = router;

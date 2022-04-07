@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     // Query operation to find one vehicle
     Vehicle.findOne({
-        attributes: { exclude: ['password'] },
+        // attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
         },
@@ -39,12 +39,12 @@ router.get('/:id', (req, res) => {
             attributes: ['id', 'comment_text', 'created_at'],
             include: {
                 model: Activity,
-                attributes: ['']
+                attributes: ['title', 'type', 'category', 'style', 'license_required', 'risk_level', 'fee', 'equipment', 'max_participants', 'min_participants']
             }
         }
             // {
             //     model: User,
-            //     attributes: [''],
+            //     attributes: ['user_id'],
             //     through: 
             // }
         ]

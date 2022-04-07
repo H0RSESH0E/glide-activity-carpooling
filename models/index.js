@@ -25,67 +25,63 @@ User.hasMany(Comment, {
 });
 
 User.hasMany(Event, {
-    through: UserEveJunc,
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
+
+User.belongsToMany(Event, {
+    as: 'participant',
+    foreignKey: 'user_id',
+    through: UserEveJunc
+})
 
 // VEHICLE
 Vehicle.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
 
 // Vehicle.belongsToMany(Event, {
 //     foreignKey: 'event_id'
 // });
 
-// LOCATIOH
-Location.belongsTo(Event, {
-    foreignKey: 'event_id'
-});
-
 // ACTIVITY
 Activity.hasMany(Event, {
-    foreignKey: 'event_id'
-});
-
-Activity.hasMany(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'event_id',
 });
 
 // EVENT
-Event.hasOne(Location, {
-    foreignKey: 'location_id'
-});
-
 Event.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
-
-Event.hasMany(User, {
-    through: 'UserEveJunc',
-    foreignKey: 'event_id'
-})
 
 Event.belongsTo(Activity, {
-    foreignKey: 'activity_id'
+    foreignKey: 'activity_id',
 });
 
 Event.hasMany(Comment, {
-    foreignKey: 'comment_id'
+    foreignKey: 'comment_id',
 });
 
-Event.hasOne(Vehicle, {
-    foreignKey: 'vehicle_id'
+Event.belongsTo(Location, {
+    foreignKey: 'location_id',
 });
 
 // COMMENT
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
-    onDelete: 'cascade'
+    onDelete: 'cascade',
 });
 
 Comment.belongsTo(Event, {
-    foreignKey: 'event_id'
+    foreignKey: 'event_id',
 });
 
-module.exports = { User, Activity, Comment, Vehicle, Location, Event, UserEveJunc, UserActJunc };
+module.exports = {
+    User,
+    Activity,
+    Comment,
+    Vehicle,
+    Location,
+    Event,
+    UserEveJunc,
+    UserActJunc,
+};

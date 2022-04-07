@@ -14,9 +14,9 @@ const commentdata = async () => {
                 // Word, words, sentences, slug (lorem-ipsum), paragraph(s), text, lines
                 comment_text: faker.lorem.paragraph(3),
                 // Returns a random image url.
-                image: faker.image.nature()
-                // user_id: faker.datatype.number(),
-                // event_id: faker.datatype.number() 
+                image: faker.image.nature(),
+                event_id: Math.random() * 10 + 1,
+                user_id: Math.random() * 10 + 1
             }
 
         comments.push(newComment);

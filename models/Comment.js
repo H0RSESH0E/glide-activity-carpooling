@@ -34,6 +34,7 @@ Comment.init({
     },
     event_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'event',
             key: 'id'

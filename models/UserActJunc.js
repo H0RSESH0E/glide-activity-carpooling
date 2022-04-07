@@ -12,6 +12,7 @@ UserActJunc.init({
     },
     user_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'user',
             key: 'id'
@@ -19,6 +20,7 @@ UserActJunc.init({
     },
     activity_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'activity',
             key: 'id'

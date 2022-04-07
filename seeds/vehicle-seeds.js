@@ -18,7 +18,6 @@ const vehicledata = async () => {
                 fuel_eco: faker.vehicle.fuel(),
                 color: faker.vehicle.color(),
                 max_passengers: faker.datatype.number({ max: 20 }),
-                // vehicle: faker.vehicle.vehicle()
             }
 
         vehicles.push(newVehicle);

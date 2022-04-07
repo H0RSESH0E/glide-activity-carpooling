@@ -12,6 +12,7 @@ UserEveJunc.init({
     },
     user_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'user',
             key: 'id'
@@ -19,6 +20,7 @@ UserEveJunc.init({
     },
     event_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'event',
             key: 'id'

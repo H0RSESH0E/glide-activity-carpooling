@@ -29,11 +29,11 @@ Location.init({
         allowNull: false,
     },
     latitude: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     longitude: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     }
 }, {

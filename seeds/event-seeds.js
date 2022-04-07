@@ -14,14 +14,14 @@ const eventdata = async () => {
                 event_name: faker.lorem.sentence(5),
                 description: faker.lorem.paragraph(),
                 location: faker.address.cityName(),
-                time_begin: faker.time.recent('abbr'),
-                time_end: faker.time.recent('abbr'),
+                time_begin: Math.random() * 24 + 1,
+                time_end: Math.random() * 24 + 1,
                 event_reviews: faker.lorem.paragraph(2),
                 max_participants: faker.datatype.number({ max: 20 }),
-                min_participants: faker.datatype.number({ min: 1 })
-                // user_id: faker.datatype.number(),
-                // comment_id: faker.datatype.number(),
-                // driver_id: faker.datatype.number() 
+                min_participants: faker.datatype.number({ min: 1 }),
+                creator_id: Math.random() * 10 + 1,
+                location_id: Math.random() * 10 + 1,
+                activity_id: Math.random() * 10 + 1
             }
 
             events.push(newEvent);

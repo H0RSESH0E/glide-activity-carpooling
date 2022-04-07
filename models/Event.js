@@ -46,6 +46,7 @@ Event.init({
     },
     creator_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'user',
             key: 'id'
@@ -53,6 +54,7 @@ Event.init({
     },
     location_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'location',
             key: 'id'
@@ -60,6 +62,7 @@ Event.init({
     },
     activity_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'activity',
             key: 'id'
