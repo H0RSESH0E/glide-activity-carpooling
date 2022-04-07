@@ -1,31 +1,31 @@
-const seedUser = require('./user-seeds');
-const seedVehicle = require('./vehicle-seeds');
-const seedLocation = require('./location-seeds');
+const userdata = require('./user-seeds');
+const vehicledata = require('./vehicle-seeds');
+const locationdata = require('./location-seeds');
 const seedActivity = require('./activity-seeds');
-const seedEvent = require('./event-seeds');
-const seedComment = require('./comment-seeds');
+const eventdata = require('./event-seeds');
+const commentdata = require('./comment-seeds');
 
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
     console.log('--------------');
-    await seedUser();
+    await userdata();
     console.log('--------------');
 
-    await seedVehicle();
+    await vehicledata();
     console.log('--------------');
 
-    await seedLocation();
+    await locationdata();
     console.log('--------------');
 
     await seedActivity();
     console.log('--------------');
 
-    await seedEvent();
+    await eventdata();
     console.log('--------------');
 
-    await seedComment();
+    await commentdata();
     console.log('--------------');
 
     process.exit(0);

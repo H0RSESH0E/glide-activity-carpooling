@@ -1,10 +1,8 @@
 const { Location } = require('../models');
 const { faker } = require('@faker-js/faker');
-const db = require('../config/connection');
 
 const locationdata = async () => {
     try {
-        await db.synce({ force: true });
         
         let locations = [];
 
@@ -21,15 +19,11 @@ const locationdata = async () => {
 
             locations.push(newLocation);
         }
-        locations.forEach(async (location) => {
-            await Location.create(location);
-        })
+        await Location.bulkCreate(locations);
     } catch (err) {
         console.error(err);
     }
 };
-
-// const seedLocation = () => Location.bulkCreate(locationdata);
 
 module.exports = locationdata;
 

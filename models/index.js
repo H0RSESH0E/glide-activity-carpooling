@@ -14,10 +14,10 @@ User.hasMany(Activity, {
     foreignKey: 'user_id'
 });
 
-User.hasMany(Vehicle, {
-    foreignKey: "user_id",
-    onDelete: "cascade"
-});
+// User.hasMany(Vehicle, {
+//     foreignKey: "user_id",
+//     onDelete: "cascade"
+// });
 
 User.hasMany(Comment, {
     foreignKey: "user_id",
@@ -48,14 +48,18 @@ Activity.hasMany(Event, {
     foreignKey: 'event_id',
 });
 
+// Activity.belongsTo(Event, {
+//     foreignKey: 'event_id'
+// });
+
 // EVENT
 Event.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-Event.belongsTo(Activity, {
-    foreignKey: 'activity_id',
-});
+// Event.belongsTo(Activity, {
+//     foreignKey: 'activity_id',
+// });
 
 Event.hasMany(Comment, {
     foreignKey: 'comment_id',
@@ -71,9 +75,9 @@ Comment.belongsTo(User, {
     onDelete: "cascade"
 });
 
-Comment.belongsTo(Event, {
-    foreignKey: 'event_id',
-});
+// Comment.belongsTo(Event, {
+//     foreignKey: 'event_id',
+// });
 
 module.exports = {
     User,

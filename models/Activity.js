@@ -37,7 +37,7 @@ Activity.init({
     },
     risk_level: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        // allowNull: false,
     },
     fee: {
         type: DataTypes.STRING,

@@ -354,7 +354,7 @@ const activitydata = [
     category: 'exercise',
     style: 'physical',
     license_required: '',
-    risk_level: '',
+    risk_level: 2,
     fee: 'no',
     equipment: 'no',
     max_participants: 20,

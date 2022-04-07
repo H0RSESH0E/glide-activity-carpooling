@@ -1,22 +1,17 @@
-const sequelize = require('../config/connection');
 const { faker } = require('@faker-js/faker');
 const { User, Comment, Vehicle } = require('../models');
-const db = require('../config/connection');
 
 const userdata = async () => {
     try {
-        await db.sync({ forcxe: true });
 
-        let users = [];
+        let users = [{
+            first_name: 'jane',
+            last_name: 'doe',
+            email: 'janedoe@email.com',
+            password: 'password1'
+        }];
 
-        for (let i = 0; i < 100; i++) {
-
-            let testUser = {
-                first_name 'Jane',
-                last_name: 'Doe',
-                email: 'janedoe@email.com',
-                password: 'password1'
-            }
+        for (let i = 0; i < 10; i++) {
 
             let newUser = {
                 first_name: faker.name.firstName(),
@@ -25,16 +20,13 @@ const userdata = async () => {
                 password: faker.internet.password()
             }
 
-        users.push(newUser, testUser);
+        users.push(newUser);
         }
-        users.forEach(async (user) => {
-            await User.create(user);
-        })
+        console.log(users);
+        await User.bulkCreate(users, ({ individualHooks: true }));
     } catch (err) {
         console.error(err);
     }
 };
-
-// const seedUser = () => User.bulkCreate(userdata, ({ individualHooks: true }));
 
 module.exports = userdata;

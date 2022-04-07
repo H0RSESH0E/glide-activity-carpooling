@@ -41,7 +41,7 @@ Vehicle.init({
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-            max: 4,                  // only allow values <= 4
+            max: 20,                  // only allow values <= 20
         }
     },
     user_id: {
