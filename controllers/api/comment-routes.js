@@ -3,7 +3,7 @@ const { Comment, Activity, User, Vehicle, Event, Location, } = require('../../mo
 
 // GET /api/comments
 router.get('/', (req, res) => {
-    Comment.findAll()
+    Comment.findAll({ include: [{ all: true, nested: true }]})
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
         console.log(err);

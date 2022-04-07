@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
+const res = require('express/lib/response');
 const path = require('path');
 const sequelize = require('sequelize');
 const { Activity, User, Vehicle, Comment, Event, Location, Participant } = require('../models');
@@ -11,6 +13,8 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res, user) => {
     res.render('login');
 });
+
+
 
 // get all posts for homepage
 // router.get('/', (req, res) => {

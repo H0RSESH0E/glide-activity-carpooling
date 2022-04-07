@@ -4,22 +4,7 @@ const { Event, Activity, User, Vehicle, Comment, Location, } = require('../../mo
 // GET /api/event
 router.get('/', (req, res) => {
     // Access our Event model and run .findAll() method to find all events
-    Event.findAll({
-        include: [
-        {
-            model: User,
-            attributes: ['user_id']
-        },
-        {
-            model: Location,
-            attributes: ['street_number', 'street', 'city', 'province', 'postal_code']
-        },
-        {
-            model: Activity,
-            attributes: ['']
-        }
-    ]
-    })
+    Event.findAll({ include: [{ all: true, nested: true }]})
     .then(dbEventData => res.json(dbEventData))
     .catch(err => {
         console.log(err);
