@@ -10,6 +10,18 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.outer-div {
+    display: flex;
+    height: 100%
+}
+.side-bar {
+    flex: 1 0 0;
+}
+
+.scrollable {
+    overflow-y: auto;
+}
+
 
 /* NAVIGATION */
 
@@ -17,15 +29,20 @@ body {
     background-color: var(--main-blue);
     min-height: 100vh;
     padding: 2vw 2vh;
-    position: fixed;
-    min-width: 400px;
+    width:max-content;
+    /* position: fixed; */
+    min-width: 300px;
 }
 
-
-.nav-row {
+.nav-column {
     line-height: 3;
     font-size: 1.3em;
 }
+
+/* .nav-row {
+    line-height: 3;
+    font-size: 1.3em;
+} */
 
 button[type="submit"],
 .btn {
@@ -36,12 +53,19 @@ button[type="submit"],
     margin-top: 20px;
 }
 
-.nav-row a:hover,
+.nav-column a:hover,
 button[type="submit"]:hover,
 .btn:hover {
     color: #fd457d;
     border: none;
 }
+
+/* .nav-row a:hover,
+button[type="submit"]:hover,
+.btn:hover {
+    color: #fd457d;
+    border: none;
+} */
 
 nav {
     display: flex;
@@ -215,6 +239,10 @@ main {
     background-color: #fff;
 }
 
+.scrollable{
+    background: none;
+}
+
 main h2 {
     color: var(--main-blue);
     z-index: 1000;
@@ -233,18 +261,20 @@ header {
     color: #fff;
 }
 
-/* Containers */
 
-.activity-container {
-    /* background-color: #e2e8f0; */
-    margin: 1vw 1vh;
-    /* border-radius: 0.4vw; */
+/* CARDS */
+
+.card {
+    margin: 2.0vw 2vh;
+    width: 250px;
 }
 
-/* .card-img-top {
-    max-height: 30%;
+.card-img-top {
+    /* max-width: 130%; */
+    height: 160px;
     object-fit: cover;
-} */
+}
+
 /* mobile */
 
 @media only screen and (max-width: 768px) {
@@ -257,28 +287,32 @@ header {
         width: 60%;
         border-radius: 10px;
         /* text-align: center; */
-        transition: 0.3s;
+      transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     }
+
     .nav-menu.active {
         left: 0;
     }
-    /* .nav-item {
-        margin: 2.5rem 0;
-    } */
+
+ 
     .hamburger {
         display: block;
         cursor: pointer;
     }
+
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
+
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
     .navbar a {
         font-size: 1.1em;
     }
@@ -288,35 +322,43 @@ header {
     .navbar {
         display: flex;
     }
+
     .nav-hide {
         display: none;
     }
+
     .hide {
         display: inline;
     }
+
     .cell-nav {
         display: flex;
         background-color: var(--main-blue);
         font-size: 3vw;
         text-align: center;
     }
+
     .description {
         font-size: 1rem;
     }
+
     button[type="submit"] {
         width: 50%;
         text-align: center;
     }
+
     body {
         min-height: 100%;
         background-size: auto;
     }
+
     main {
         margin: 20px;
         padding: 20px;
         height: 100vh;
         background-color: #fff;
     }
+
     button .btn {
         padding: 20px;
     }
@@ -329,6 +371,7 @@ header {
     .web-nav li {
         font-size: 2.2vw;
     }
+
     .description {
         font-size: 1.5rem;
     }
