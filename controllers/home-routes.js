@@ -9,13 +9,13 @@ router.get("/", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/homepage");
   } else {
-    res.render('signup', {views: ['signup.handlebars']});
+    res.render('signup', { views: ['signup.handlebars'] });
   }
 });
 
 // GET method for authenticated user to homepage
 router.get('/homepage', authenticatedUser, (req, res) => {
-  res.render('homepage', {views: ['homepage.handlebars']});
+  res.render('homepage', { views: ['homepage.handlebars'] });
 });
 
 // // GET method to popular activities
@@ -31,8 +31,8 @@ router.get('/homepage', authenticatedUser, (req, res) => {
 // GET method to single event
 router.get('/single-event', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('single-event', { partials: ['single-event.handlebars']});
-  } 
+    res.render('single-event', { partials: ['single-event.handlebars'] });
+  }
   // else {
   //   res.render('login', {views: ['login.handlebars']});
   // }
@@ -41,8 +41,8 @@ router.get('/single-event', (req, res) => {
 // GET method to create vehicle
 router.get('/create-vehicle', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('create-vehicle', { views: ['create-vehicle.handlebars']});
-  } 
+    res.render('create-vehicle', { views: ['create-vehicle.handlebars'] });
+  }
   // else {
   //   res.render('login', {views: ['login.handlebars']});
   // }
@@ -51,8 +51,8 @@ router.get('/create-vehicle', (req, res) => {
 // GET method to create events
 router.get('/create-event', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('create-event', { views: ['create-event.handlebars']});
-  } 
+    res.render('create-event', { views: ['create-event.handlebars'] });
+  }
   // else {
   //   res.render('login', {views: ['login.handlebars']});
   // }
@@ -61,8 +61,8 @@ router.get('/create-event', (req, res) => {
 // GET method to profile edit
 router.get('/profile-edit', authenticatedUser, (req, res) => {
   if (req.session.loggedIn) {
-    res.render('profile-edit', { views: ['profile-edit.handlebars']});
-  } 
+    res.render('profile-edit', { views: ['profile-edit.handlebars'] });
+  }
   // else {
   //   res.render('login', {views: ['login.handlebars']});
   // }
@@ -70,22 +70,48 @@ router.get('/profile-edit', authenticatedUser, (req, res) => {
 
 // GET metho to login page
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/dashboard');
-        return;
-    }
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+  }
 
-    res.render('login')
+  res.render('login')
 });
 
 // GET method to signup page
 router.get('/signup', (req, res) => {
-    res.render('signup');
+  res.render('signup');
 });
 
 //http://localhost:3001/popular-activities
 router.get('/popular-activities', (req, res) => {
-  res.render('popular-activities', { test: 'test text'});
+  Activity.findAll({
+    attributes: [
+      'id',
+      'title',
+      'type',
+      'category',
+      'style',
+      'license_required',
+      'risk_level',
+      'fee',
+      'max_participants',
+      'min_participants',
+      'image_url',
+      'created_at',
+      'updated_at',
+      'user_id'
+    ]
+  })
+    .then(dbActivityData => {
+      const activities = dbActivityData.map(items => items.get({ plain: true }));
+      console.log(activities);
+      res.render('popular-activities', {activities});
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 

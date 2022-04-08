@@ -1,16 +1,30 @@
-
 <div class="col-3">
 
     {{> side-bar }}
     {{> header-bar }}
-    
+
 </div>
 
 
-    <div class="col-9">
-        {{> all-activities }}
-        {{!-- {{{ body }}} --}}
+<div class="col-9">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <header>
+                <h2 class="light-on-dark">Popular Activites</h2>
+            </header>
+        </div>
     </div>
-    {{!-- <footer>
-      Thanks for visiting!
-    </footer> --}}
+
+    <section>
+        <div class="row d-flex justify-content-around">
+            {{#each activities as |item|}}
+            {{> activity-container item }}
+            {{/each}}
+        </div>
+    </section>
+
+
+</div>
+{{!-- <footer>
+    Thanks for visiting!
+</footer> --}}

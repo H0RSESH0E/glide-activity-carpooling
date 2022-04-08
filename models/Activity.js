@@ -56,6 +56,10 @@ Activity.init({
         default: {
             min: 1,                  // only allow values => 1
         }
+    },
+    image_url: {
+        type: DataTypes.STRING(800),
+        allowNull: false
     }
 }, {
     sequelize,

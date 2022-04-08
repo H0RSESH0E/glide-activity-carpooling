@@ -218,11 +218,16 @@ header {
     margin: 0;
 }
 
+.light-on-dark {
+    color: #fff;
+}
+
 /* Containers */
 
 .activity-container {
-    background-color: #e2e8f0;
-
+    /* background-color: #e2e8f0; */
+    margin: 1vw 1vh;
+    /* border-radius: 0.4vw; */
 }
 
 
