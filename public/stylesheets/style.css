@@ -5,6 +5,8 @@
 }
 
 body {
+    overflow: hidden;
+    height: 100vh;
     font-family: "Poppins", sans-serif;
 }
 
@@ -16,7 +18,7 @@ body {
     min-height: 100vh;
     padding: 2vw 2vh;
     position: fixed;
-    min-width: 20vw;
+    min-width: 400px;
 }
 
 
@@ -181,10 +183,6 @@ input {
 }
 
 
-/* .nav-item {
-    margin-left: 5rem;
-} */
-
 .nav-link {
     font-size: 1.6rem;
     font-weight: 400;
@@ -225,6 +223,10 @@ main h2 {
 
 header {
     margin: 0;
+}
+
+.main-heading {
+    padding: 15px;
 }
 
 .light-on-dark {
@@ -329,5 +331,13 @@ header {
     }
     .description {
         font-size: 1.5rem;
+    }
+
+    .navbar {
+        display: flex;
+    }
+
+    .nav-hide {
+        display: none;
     }
 }
