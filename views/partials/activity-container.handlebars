@@ -1,11 +1,29 @@
 <div class="activity-container col-12 col-md-3 d-flex justify-content-around">
    
-<div class="card" style="width: 18rem;">
+{{!-- <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="{{image_url}}" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">{{title}}</p>
   </div>
-</div>
+</div> --}}
+
+{{!-- <div class="card bg-dark text-white">
+  <img class="card-img" src="{{image_url}}" alt="Card image">
+  <div class="card-img-overlay">
+    <h5 class="card-title">{{title}}</h5>
+    <p class="card-text">{{category}}</p>
+    <p class="card-text">{{style}}</p>
+  </div>
+</div> --}}
+
+  <div class="card">
+    <img class="card-img-top" src="{{image_url}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{category}}</p>
+      <p class="card-text"><small class="text-muted">{{style}}</small></p>
+    </div>
+  </div>
 
 </div>
 

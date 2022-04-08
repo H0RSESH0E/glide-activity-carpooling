@@ -230,7 +230,10 @@ header {
     /* border-radius: 0.4vw; */
 }
 
-
+/* .card-img-top {
+    max-height: 30%;
+    object-fit: cover;
+} */
 /* mobile */
 
 @media only screen and (max-width: 768px) {
