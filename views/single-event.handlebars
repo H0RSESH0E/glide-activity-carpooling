@@ -2,32 +2,24 @@
 <section class="lading page col-lg-9 col-md-8 col-sm-12">
     <a href="/dashboard"> &larr; Back to My dashboard</a>
 
-    <div class="container col-lg-9 col-md-8 col-sm-12">
-        <h2 class="text-light">Single Event</h2>
+    <div class="container mt-5 col-lg-9 col-md-8 col-sm-12">
+        <h2 class="text-light mb-3">Single Event</h2>
             {{body}}
             <div class="card">
                 <div id="populate-single-event-card" class="card-body">
-                    <h5 class="card-title">{{event.event_name}}</h5>
+                    <h5 class="card-title">{{Event.event_name}}</h5>
                     <div class="card-body"></div>
-                    <p class="card-text" id="eventdescription">Description: <span>{{event.description}}</span></p>
-                    <p class="card-text" id="eventbegining-time">Time Begin: <span>{{event.time_begin}}</span></p>
-                    <p class="card-text" id="eventend-time">Ending time: <span>{{event.time_end}}</span></p>
-                    <p class="card-text" id="eventmax-participants">Maximum Participants: <span>{{event.max_participants}}</span></p>
-                    <p class="card-text" id="eventmin-participants">Minimum Participants: <span>{{event.min_partcipants}}</span></p>
+                    <p class="card-text p-2" id="eventdescription">Description: <span>{{Event.description}}</span></p>
+                    <p class="card-text p-2" id="eventbegining-time">Time Begin: <span>{{Event.time_begin}}</span></p>
+                    <p class="card-text p-2" id="eventend-time">Ending time: <span>{{Event.time_end}}</span></p>
+                    <p class="card-text p-2" id="eventmax-participants">Maximum Participants: <span>{{Event.max_participants}}</span></p>
+                    <p class="card-text p-2" id="eventmin-participants">Minimum Participants: <span>{{Event.min_partcipants}}</span></p>
                 </div>
             </div>
     </div>
-
-    <div class="container col-lg-9 col-md-8 col-sm-12">
-        <h2 class="text-light">Find Your Event</h2>
-        <div id="map"></div>
-    </div>
 </section>
-
-<script async defer 
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqhzQlpSSg2jvYQZTXqyVgkZucOgXNP2o&callback=initMap">
-</script>
 
 {{#if loggedIn}}
 <script src="/public/javascript/single-event.js"></script>
+<script src="/javascript/add-event.js"></script>
 {{/if}}
