@@ -13,14 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // creates instance(s) of ExpressHandlebars - allowing full access to API
-const hbs = exphbs.create({
-
-	// Uses multiple partials dirs and are then shared
-	// with the client-side of the app
-	partialsDir: [
-		'views/partials/'
-	],
-});
+const hbs = exphbs.create({});
 const helpers = require('./utils/helpers');
 const routes = require("./controllers");
 // connect to database
@@ -45,7 +38,7 @@ app.use(session(sess));
 // Register `hbs.engine` with the Express app.
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
+// app.set('partials','views/partials'); //Sets the partials directory where hbs files are
 // Express.js middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -219,6 +219,15 @@ header {
 }
 
 
+/* MAP */
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}
+
+
+
 /* mobile */
 
 @media only screen and (max-width: 768px) {

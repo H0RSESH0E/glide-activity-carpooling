@@ -18,20 +18,20 @@ router.get('/homepage', authenticatedUser, (req, res) => {
   res.render('homepage', {views: ['homepage.handlebars']});
 });
 
-// // GET method to popular activities
-// router.get('/popular-activities', authenticatedUser, (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.render('popular-activities', { partialsDir: ['partials/popular-activities.handlebars']});
-//   } 
-//   // else {
-//   //   res.render('login', {views: ['login.handlebars']});
-//   // }
-// });
+// GET method to popular activities
+router.get('/popular-activities', authenticatedUser, (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('popular-activities', { views: ['popular-activities.handlebars']});
+  } 
+  // else {
+  //   res.render('login', {views: ['login.handlebars']});
+  // }
+});
 
 // GET method to single event
 router.get('/single-event', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('single-event', { partials: ['single-event.handlebars']});
+    res.render('single-event', { views: ['single-event.handlebars']});
   } 
   // else {
   //   res.render('login', {views: ['login.handlebars']});

@@ -44,8 +44,6 @@ As a user I want to choose an activity and quickly look for other people also in
 
 * **Dotenv:** Dotenv is a zero-dependency module that loads environment variables from a . env file into process. env . Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
 
-* **React:** Used to dynamically render components on browser and initiate functionality of the game based on user inputs.
-
 * **Bcrypt:** is a Node.js library that allows you to hash passwords. Hashing is the process of taking input and using a mathematical formula to chop and mix it up to produce an output of a specific length. Hashing is a one-way function, meaning that it can easily convert input to a fixed-size output, but it is difficult to invert, or convert in the opposite direction. This attribute allows developers to secure passwords when authenticating users for their applications.
 
 * **Nodemon:** is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
