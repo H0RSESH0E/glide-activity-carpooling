@@ -15,7 +15,10 @@ body {
     background-color: var(--main-blue);
     min-height: 100vh;
     padding: 2vw 2vh;
+    position: fixed;
+    min-width: 20vw;
 }
+
 
 .nav-row {
     line-height: 3;
@@ -41,6 +44,11 @@ button[type="submit"]:hover,
 nav {
     display: flex;
     flex-direction: column;
+}
+
+.nav-logo {
+    display: block;
+    margin: 0 auto;
 }
 
 .web-logo {
