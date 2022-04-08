@@ -270,7 +270,6 @@ header {
 }
 
 .card-img-top {
-    /* max-width: 130%; */
     height: 160px;
     object-fit: cover;
 }
@@ -362,6 +361,8 @@ header {
     button .btn {
         padding: 20px;
     }
+
+
 }
 
 
@@ -382,5 +383,14 @@ header {
 
     .nav-hide {
         display: none;
+    }
+    .card {
+        margin: 2.0vw;
+        width: 180px;
+    }
+    
+    .card-img-top {
+        height: 140px;
+        object-fit: cover;
     }
 }

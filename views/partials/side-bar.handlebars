@@ -1,50 +1,49 @@
 <div class="row side-bar nav-column nav-hide web-nav">
     <div class="col-12 d-flex flex-column justify-content-between">
 
-        {{!-- <nav class="row nav-row nav-hide web-nav side-bar"> --}}
-            <div>
-                {{#if loggedIn}}
-                <h2 class="light-on-dark">Hi {{first_name}}!</h2>
-                {{/if}}
-                <hr>
+        <div>
+            {{#if loggedIn}}
+            <h2 class="light-on-dark">Hi {{first_name}}!</h2>
+            {{/if}}
+            <hr>
 
-                <div class="row d-flex align-items-center">
-                    <img src="star-icon.svg" alt="" class="col-lg-2 col-sm-2">
-                    <a href="/popular-activities" class="col-lg-10 col-sm-10">Popular Activities</a>
-                </div>
-
-                <div class="row d-flex align-items-center">
-                    <img src="star-icon.svg" alt="" class="col-lg-2 col-sm-2">
-                    <a href="/single-event" class="col-lg-10 col-sm-10">Choose an Event</a>
-                </div>
-
-                <div class="row d-flex align-items-center">
-                    <img src="vehicle-cab-icon.svg" alt="" class="col-lg-2 col-sm-2">
-                    <a href="/create-vehicle" class="col-lg-10 col-sm-10">Create a Vehicle</a>
-                </div>
-
-                <div class="row d-flex align-items-center">
-                    <img src="vehicle-cab-icon.svg" alt="" class="col-lg-2 col-sm-2">
-                    <a href="/create-event" class="col-lg-10 col-sm-10">Create an Event</a>
-                </div>
-
-                <div class="row d-flex align-items-center">
-                    <img src="profile-icon.svg" alt="" class="col-lg-2 col-sm-2">
-                    <a href="/profile-edit" class="col-lg-10 col-sm-10">Edit Profile</a>
-                </div>
-
-
-                {{#if loggedIn}}
-                <div class="row d-flex">
-                    <img src="profile-icon.svg" alt="" class="col-lg-2 col-sm-2">
-                    <a href="/signout" class="col-lg-10 col-sm-10">Sign Out</a>
-                </div>
-                {{/if}}
+            <div class="row d-flex align-items-center">
+                <img src="star-icon.svg" alt="" class="col-lg-2 col-sm-2">
+                <a href="/popular-activities" class="col-lg-10 col-sm-10">Popular Activities</a>
             </div>
-            <div class="align-self-end">
-                <a href="/" class="web-logo"><img class="nav-logo" src="logo.svg" alt="Glide carpool app logo"
-                        width="200px"></a>
+
+            <div class="row d-flex align-items-center">
+                <img src="star-icon.svg" alt="" class="col-lg-2 col-sm-2">
+                <a href="/single-event" class="col-lg-10 col-sm-10">Choose an Event</a>
             </div>
+
+            <div class="row d-flex align-items-center">
+                <img src="vehicle-cab-icon.svg" alt="" class="col-lg-2 col-sm-2">
+                <a href="/create-vehicle" class="col-lg-10 col-sm-10">Create a Vehicle</a>
+            </div>
+
+            <div class="row d-flex align-items-center">
+                <img src="vehicle-cab-icon.svg" alt="" class="col-lg-2 col-sm-2">
+                <a href="/create-event" class="col-lg-10 col-sm-10">Create an Event</a>
+            </div>
+
+            <div class="row d-flex align-items-center">
+                <img src="profile-icon.svg" alt="" class="col-lg-2 col-sm-2">
+                <a href="/profile-edit" class="col-lg-10 col-sm-10">Edit Profile</a>
+            </div>
+
+
+            {{#if loggedIn}}
+            <div class="row d-flex">
+                <img src="profile-icon.svg" alt="" class="col-lg-2 col-sm-2">
+                <a href="/signout" class="col-lg-10 col-sm-10">Sign Out</a>
+            </div>
+            {{/if}}
+        </div>
+        <div class="align-self-end">
+            <a href="/" class="web-logo"><img class="nav-logo" src="logo.svg" alt="Glide carpool app logo"
+                    width="200px"></a>
+        </div>
         </nav>
 
     </div>
