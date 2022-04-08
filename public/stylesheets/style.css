@@ -218,6 +218,13 @@ header {
     margin: 0;
 }
 
+/* Containers */
+
+.activity-container {
+    background-color: #e2e8f0;
+
+}
+
 
 /* mobile */
 

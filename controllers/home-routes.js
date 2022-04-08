@@ -83,4 +83,10 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+//http://localhost:3001/popular-activities
+router.get('/popular-activities', (req, res) => {
+  res.render('popular-activities', { test: 'test text'});
+});
+
+
 module.exports = router;
