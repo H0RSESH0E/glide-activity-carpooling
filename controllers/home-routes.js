@@ -106,7 +106,13 @@ router.get('/popular-activities', (req, res) => {
     .then(dbActivityData => {
       const activities = dbActivityData.map(items => items.get({ plain: true }));
       console.log(activities);
-      res.render('popular-activities', {activities});
+      console.log("FUN!!!    --------------  ", req.session.loggedIn);
+      let sessionInfo = req.session;
+      console.log('Your session ID SIR!  ____-----~~~~~ ', req.session);
+      res.render('popular-activities', {
+        activities,
+        sessionInfo
+      });
     })
     .catch(err => {
       console.log(err);

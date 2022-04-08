@@ -4,7 +4,7 @@
         {{!-- <nav class="row nav-row nav-hide web-nav side-bar"> --}}
             <div>
                 {{#if loggedIn}}
-                <h1>Hi {{{User.last_name}}}{{User.first_name}}!</h1>
+                <h2 class="light-on-dark">Hi {{first_name}}!</h2>
                 {{/if}}
                 <hr>
 
@@ -36,8 +36,8 @@
 
                 {{#if loggedIn}}
                 <div class="row d-flex">
-                    <img src="profile-icon.svg" alt="" class="col-lg-3 col-sm-3">
-                    <a href="/signout" class="col-lg-9 col-sm-9">Sign Out</a>
+                    <img src="profile-icon.svg" alt="" class="col-lg-2 col-sm-2">
+                    <a href="/signout" class="col-lg-10 col-sm-10">Sign Out</a>
                 </div>
                 {{/if}}
             </div>
