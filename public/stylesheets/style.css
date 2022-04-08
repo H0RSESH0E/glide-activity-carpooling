@@ -316,3 +316,13 @@ header {
         font-size: 1.5rem;
     }
 }
+#editSubmit{
+display:flex;
+flex: 1 0 10vw;
+justify-content:center;
+width: 50%;
+height: 80%;
+}
+input{
+    text-align:center;
+ }
