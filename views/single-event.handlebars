@@ -1,22 +1,30 @@
-<div class="outer-div">
-
-    {{> side-bar sessionInfo }}
-
-    <main class="scrollable">
 
         <div class="row  justify-content-center">
             <header class="col-12 d-flex justify-content-center">
-                <h2 class="main-heading light-on-dark">Find an Event</h2>
+                <h2 class="main-heading light-on-dark">Event Details</h2>
             </header>
         </div>
 
         <section class="row">
             <div class="col-12 d-flex justify-content-center flex-wrap">
-                {{#each events as |item|}}
-                {{> event-container item }}
-                {{/each}}
+
+                <div class="card event-card" style="width: 75%">
+                    <img class="card-img-top" style='height: 40vh' src="{{event.activity.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{event.activity.title}}</h5>
+                        <p class="card-text">{{event.event_name}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Participants: {{event.min_participants}} - {{event.max_participants}}</li>
+                        <li class="list-group-item">Location: {{event.location.city}}</li>
+                        <li class="list-group-item">Starts: {{event.time_begin}}</li>
+                        <li class="list-group-item">Ends: {{event.time_end}}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="/api/event/{{event.id}}" class="card-link">Email the Organizer</a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-    </main>
-</div>

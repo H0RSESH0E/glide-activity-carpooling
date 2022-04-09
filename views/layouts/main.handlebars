@@ -19,9 +19,14 @@
 
 <body>
   {{> header-bar }}
+<div class="outer-div">
 
+    {{> side-bar sessionInfo }}
+
+    <main class="scrollable">
   {{{ body }}}
-
+    </main>
+    </div>
 </body>
 
 </html>

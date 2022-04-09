@@ -178,18 +178,12 @@ router.get('/browse-events', authenticatedUser, (req, res) => {
   })
     .then(dbEventData => {
       const events = dbEventData.map(items => items.get({ plain: true }));
-      // console.log('+++++++++++++++++++++++++++++++++++', events);
-
       events.forEach((element) =>{
         element.time_begin = moment(element.time_begin).startOf('hour').format('lll');
         element.time_end = moment(element.time_end).startOf('hour').format('lll')
-
       });
-    
-      // console.log('!!!!!!!!!!!!!!!!!!-----!!!!!!!!!!!!!!!!', events[1]);
-
       let sessionInfo = req.session;
-      res.render('choose-event', {
+      res.render('browse-event', {
         events,
         sessionInfo
       });

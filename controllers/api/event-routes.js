@@ -4,12 +4,12 @@ const { Event, Activity, User, Vehicle, Comment, Location, } = require('../../mo
 // GET /api/event
 router.get('/', (req, res) => {
     // Access our Event model and run .findAll() method to find all events
-    Event.findAll({ include: [{ all: true, nested: true }]})
-    .then(dbEventData => res.json(dbEventData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    Event.findAll({ include: [{ all: true, nested: true }] })
+        .then(dbEventData => res.json(dbEventData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 // GET /api/event/1
@@ -28,36 +28,44 @@ router.get('/:id', (req, res) => {
             {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'created_at'],
-               
+
             },
             {
                 model: Activity,
-                attributes: ['id', 'title', 'type', 'category', 'style', 'license_required', 'risk_level', 'fee', 'max_participants', 'min_participants']
+                attributes: ['id', 'title', 'type', 'category', 'style', 'license_required', 'risk_level', 'fee', 'max_participants', 'min_participants', 'image_url']
             },
             {
                 model: User,
-                attributes: ['id','first_name','last_name','email'],
+                attributes: ['id', 'first_name', 'last_name', 'email'],
                 include: [
                     {
                         model: Vehicle,
                         attributes: ['year', 'make', 'model', 'fuel_eco', 'color', 'max_passengers', 'user_id']
                     }
                 ]
-                
+
             }
         ]
     })
-    .then(dbEventData => {
-        if (!dbEventData) {
-            res.status(404).json({ message: 'No event found with this id' });
-            return;
-        }
-        res.json(dbEventData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbEventData => {
+            if (!dbEventData) {
+                res.status(404).json({ message: 'No event found with this id' });
+                return;
+            }
+            // console.log('555555555555=====', dbEventData);
+            // res.json(dbEventData);
+            let sessionInfo = req.session;
+            const event = dbEventData.get({ plain: true });
+            // res.json(event);
+            res.render('single-event', {
+                event,
+                sessionInfo
+            })
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 // POST /api/event
@@ -75,11 +83,11 @@ router.post('/', (req, res) => {
         user_id: req.body.user_id,
         activity_id: req.body.activity_id
     })
-    .then(dbEventData => res.json(dbEventData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbEventData => res.json(dbEventData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 // PUT /api/event/1
@@ -91,17 +99,17 @@ router.put('/:id', (req, res) => {
             id: req.params.id
         }
     })
-    .then(dbEventData => {
-        if (!dbEventData[0]) {
-            res.status(404).json({ message: 'No event found with this id' });
-            return;
-        }
-        res.json(dbEventData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbEventData => {
+            if (!dbEventData[0]) {
+                res.status(404).json({ message: 'No event found with this id' });
+                return;
+            }
+            res.json(dbEventData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 // DELETE /api/event/1
@@ -111,17 +119,17 @@ router.delete('/:id', (req, res) => {
             id: req.params.id
         }
     })
-    .then(dbEventData => {
-        if (!dbEventData) {
-            res.status(404).json({ message: 'No event found with this id.' });
-            return;
-        }
-        res.json(dbEventData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbEventData => {
+            if (!dbEventData) {
+                res.status(404).json({ message: 'No event found with this id.' });
+                return;
+            }
+            res.json(dbEventData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
