@@ -1,34 +1,45 @@
 {{> nav-bar }}
-<main class="col-lg-9 col-md-8 col-sm-12">
-  <h2>Create an Event</h2>
+<style>
+  main {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    }
+  label {
+  color:whitesmoke
+  }
+</style>
+<main class="col-lg-9 col-md-8 col-sm-12" id="editSubmit">
+  <section class="lading page col-lg-9 col-md-8 col-sm-12">
+    <a href="/dashboard"> &larr; Back to My dashboard</a>
+  <h2 style="color:whitesmoke">Create an Event</h2>
 
   <form class="event-create">
     <div>
-      <label class="text-light" for="event-name">Event Name</label>
-      <input type="text" id="event-name" name="name" placeholder="Event Name" />
+      <label for="event-name">Event Name:</label>
+      <input type="text" id="event-name" name="name" placeholder="Example: Fishing" />
     </div>
     <div>
-      <label class="text-light" for="event-description">Description</label>
-      <input type="text" id="event-description" name="description" placeholder="Event Description" />
+      <label for="event-description">Description:</label>
+      <input type="text" id="event-description" name="description" placeholder="Example: Float and fly fish the Notty!" />
     </div>
     <div>
-      <label class="text-light" for="event-location">Location</label>
-      <input type="text" id="event-location" name="location" placeholder="Event Location" />
+      <label for="event-location">Location:</label>
+      <input type="text" id="event-location" name="location" placeholder="Example: Nottawasaga, ON" />
     </div>
     <div>
-      <label class="text-light" for="event-begining-time">Begining time</label>
-      <input type="date" id="event-begining-time" name="time-begin" placeholder="Event Begining Time" />
+      <label for="event-begining-time">Begining Time:</label>
+      <input type="time" id="event-begining-time" name="time-begin" placeholder="Choose from calander" />
     </div>
     <div>
-      <label class="text-light" for="event-end-time">Ending time</label>
-      <input type="date" id="event-end-time" name="time-end" placeholder="Event Ending Time" />
+      <label for="event-end-time">Ending Time:</label>
+      <input type="time" id="event-end-time" name="time-end" placeholder="Choose from calander" />
     </div>
     <div>
-      <label class="text-light" for="event-max-participants">Participants</label>
+      <label for="event-max-participants">Participants:</label>
       <input type="number" id="event-max-participants" name="max_participants" placeholder="Max Participants" />
     </div>
     <div>
-      <label class="text-light" for="event-min-participants">Participants</label>
+      <label for="event-min-participants">Participants:</label>
       <input type="number" id="event-min-participants" name="min_participants" placeholder="Min Participants" />
     </div>
     <button type="submit" class="btn btn-light">Create</button>
