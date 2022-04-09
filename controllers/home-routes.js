@@ -8,14 +8,14 @@ const moment = require('moment');
 
 router.get("/", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/homepage");
+    res.redirect("/popular-activities");
   } else {
-    res.render('signup', { views: ['signup.handlebars'] });
+    res.render('homepage', { views: ['homepage.handlebars'] });
   }
 });
 
 // GET method for authenticated user to homepage
-router.get('/homepage', authenticatedUser, (req, res) => {
+router.get('/homepage', (req, res) => {
   res.render('homepage', { views: ['homepage.handlebars'] });
 });
 
