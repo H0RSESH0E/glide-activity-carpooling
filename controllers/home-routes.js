@@ -183,6 +183,7 @@ router.get('/browse-events', authenticatedUser, (req, res) => {
         element.time_end = moment(element.time_end).startOf('hour').format('lll')
       });
       let sessionInfo = req.session;
+      console.log("------------------------router.get('/browse-events', authenticatedUser, (req, res) => -------------------------", sessionInfo)
       res.render('browse-event', {
         events,
         sessionInfo

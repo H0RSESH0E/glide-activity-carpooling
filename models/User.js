@@ -27,13 +27,11 @@ User.init({
     first_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
     },
     // define a last name column
     last_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
     },
     // define an email column
     email: {
