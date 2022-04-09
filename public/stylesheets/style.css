@@ -279,6 +279,10 @@ header {
     object-fit: cover;
 }
 
+.card-link {
+    color: var(--button-blue);
+}
+
 /* MAP */
 #map {
     width: 100%;
@@ -390,7 +394,6 @@ header {
     .description {
         font-size: 1.5rem;
     }
-<<<<<<< HEAD
 
     .navbar {
         display: flex;
@@ -409,8 +412,7 @@ header {
         object-fit: cover;
     }
 }
-=======
-}
+
 #editSubmit{
 display:flex;
 flex: 1 0 10vw;
@@ -421,4 +423,3 @@ height: 80%;
 input{
     text-align:center;
  }
->>>>>>> f5aa6c78702e7afafe2a7e72e1c59b051e0679a2

@@ -1,8 +1,7 @@
-
 <div class="card event-card" style="width: 18rem;">
   <img class="card-img-top" src="{{activity.image_url}}" alt="Card image cap">
   <div class="card-body">
-  <h5 class="card-title">{{activity.title}}</h5>
+    <h5 class="card-title">{{activity.title}}</h5>
     <p class="card-text">{{event_name}}</p>
   </div>
   <ul class="list-group list-group-flush">
@@ -12,7 +11,7 @@
     <li class="list-group-item">Ends: {{time_end}}</li>
   </ul>
   <div class="card-body">
-    <a href="#" class="card-link">Details</a>
+    <a href="/api/event/{{id}}" class="card-link">Details</a>
   </div>
 </div>
 

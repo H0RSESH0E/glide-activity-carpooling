@@ -14,10 +14,10 @@ User.hasMany(Activity, {
     foreignKey: 'user_id'
 });
 
-// User.hasMany(Vehicle, {
-//     foreignKey: "user_id",
-//     onDelete: "cascade"
-// });
+User.hasMany(Vehicle, {
+    foreignKey: "user_id",
+    onDelete: "cascade"
+});
 
 User.hasMany(Comment, {
     foreignKey: "user_id",

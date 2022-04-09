@@ -23,25 +23,28 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Location,
-                attributes: ['street_number', 'street', 'city', 'province', 'postal_code']
+                attributes: ['street_address', 'city', 'state', 'postal_code', 'latitude', 'longitude']
             },
             {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'created_at'],
-                include: {
-                    model: Vehicle,
-                    attributes: ['year', 'make', 'model']
-                }
+               
             },
             {
                 model: Activity,
-                attributes: ['title', 'type', 'category', 'style', 'license_required', 'risk_level', 'fee', 'equipment', 'max_participants', 'min_participants']
+                attributes: ['id', 'title', 'type', 'category', 'style', 'license_required', 'risk_level', 'fee', 'max_participants', 'min_participants']
+            },
+            {
+                model: User,
+                attributes: ['id','first_name','last_name','email'],
+                include: [
+                    {
+                        model: Vehicle,
+                        attributes: ['year', 'make', 'model', 'fuel_eco', 'color', 'max_passengers', 'user_id']
+                    }
+                ]
+                
             }
-            // {
-            //     model: Vehicle,
-            //     attributes: [''],
-            //     through: User
-            // }
         ]
     })
     .then(dbEventData => {
