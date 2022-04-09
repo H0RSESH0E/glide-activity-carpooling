@@ -8,7 +8,7 @@ const eventdata = async () => {
         let events = [];
 
         for (let i = 0; i < 10; i++) {
-            let start = moment(new Date()).format("MMM Do YY");
+            let start = new Date().getTime();
 
             let newEvent = {
                 event_name: faker.lorem.sentence(5),

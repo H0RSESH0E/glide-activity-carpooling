@@ -166,6 +166,12 @@ router.get('/browse-events', authenticatedUser, (req, res) => {
             'last_name'
           ]
         }
+      },
+      {
+        model: Location,
+        attributes: [
+          'city'
+        ]
       }
     ]
   })
@@ -173,7 +179,11 @@ router.get('/browse-events', authenticatedUser, (req, res) => {
       const events = dbEventData.map(items => items.get({ plain: true }));
     console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', events);
     console.log('----------------------------------------------------------------');
-console.log('BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB', events[1].comments)
+// console.log('BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB', events[1].comments)
+
+      // const nextObject = events.forEach(object => {
+      //   object.time_begin = moment( 
+      // })
 
       let sessionInfo = req.session;
       res.render('choose-event', {
@@ -188,3 +198,4 @@ console.log('BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 });
 
 module.exports = router;
+
