@@ -120,6 +120,7 @@ router.get('/popular-activities', (req, res) => {
 //http://localhost:3001/browse-events
 router.get('/browse-events', authenticatedUser, (req, res) => {
   Event.findAll({
+    raw: true,
     attributes: [
       'id',
       'event_name',
@@ -151,11 +152,13 @@ router.get('/browse-events', authenticatedUser, (req, res) => {
       },
       {
         model: Comment,
+        
         attributes: [
           'id',
           'comment_text',
           'image'
         ],
+
         include: {
           model: User,
           attributes: [
@@ -167,8 +170,14 @@ router.get('/browse-events', authenticatedUser, (req, res) => {
     ]
   })
     .then(dbEventData => {
-      const events = dbEventData.map(items => items.get({ plain: true }));
-      console.log('GOOOOOOOOOOOOOOOD - ', events);
+      // let r = dbEventData[1].dataValues.comments.map(items => items.get({plain: true}));
+      // const events = dbEventData.map(items => items.get({ plain: true, nest: true }));
+      console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', dbEventData);
+
+      const events = dbEventData;
+
+    
+      console.log('GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOD - ', events[1]['activity.title']);
       let sessionInfo = req.session;
       res.render('choose-event', {
         events,
