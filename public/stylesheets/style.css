@@ -5,19 +5,44 @@
 }
 
 body {
+    overflow: hidden;
+    height: 100vh;
     font-family: "Poppins", sans-serif;
+}
+
+.outer-div {
+    display: flex;
+    height: 100%
+}
+
+.side-bar {
+    flex: 1 0 0;
+}
+
+.scrollable {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 
 /* NAVIGATION */
 
+.login-name {
+    line-height: 1;
+    font-size: 1.5em;
+}
+
 .web-nav {
     background-color: var(--main-blue);
     min-height: 100vh;
     padding: 2vw 2vh;
+    width: max-content;
+    /* position: fixed; */
+    min-width: 310px;
 }
 
-.nav-row {
+.nav-column {
     line-height: 3;
     font-size: 1.3em;
 }
@@ -31,7 +56,7 @@ button[type="submit"],
     margin-top: 20px;
 }
 
-.nav-row a:hover,
+.nav-column a:hover,
 button[type="submit"]:hover,
 .btn:hover {
     color: #fd457d;
@@ -41,6 +66,11 @@ button[type="submit"]:hover,
 nav {
     display: flex;
     flex-direction: column;
+}
+
+.nav-logo {
+    display: block;
+    margin: 0 auto;
 }
 
 .web-logo {
@@ -72,6 +102,7 @@ body {
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .landing-page {
@@ -171,11 +202,6 @@ input {
     height: 90vh;
 }
 
-
-/* .nav-item {
-    margin-left: 5rem;
-} */
-
 .nav-link {
     font-size: 1.6rem;
     font-weight: 400;
@@ -208,6 +234,10 @@ main {
     background-color: #fff;
 }
 
+.scrollable {
+    background: none;
+}
+
 main h2 {
     color: var(--main-blue);
     z-index: 1000;
@@ -218,14 +248,39 @@ header {
     margin: 0;
 }
 
+.main-heading {
+    padding: 15px;
+}
+
+.light-on-dark {
+    color: #fff;
+}
+
+
+/* CARDS */
+
+.card {
+    margin: 2.0vw 2vh;
+    width: 250px;
+}
+
+.event-card {
+    margin: 4.0vw 6vh !important;
+}
+
+.card-img-top {
+    height: 160px;
+    object-fit: cover;
+}
+
 
 /* MAP */
+
 #map {
     width: 100%;
     height: 400px;
     background-color: grey;
 }
-
 
 
 /* mobile */
@@ -246,9 +301,6 @@ header {
     .nav-menu.active {
         left: 0;
     }
-    /* .nav-item {
-        margin: 2.5rem 0;
-    } */
     .hamburger {
         display: block;
         cursor: pointer;
@@ -316,13 +368,33 @@ header {
         font-size: 1.5rem;
     }
 }
-#editSubmit{
-display:flex;
-flex: 1 0 10vw;
-justify-content:center;
-width: 50%;
-height: 80%;
+
+#editSubmit {
+    display: flex;
+    flex: 1 0 10vw;
+    justify-content: center;
+    width: 50%;
+    height: 80%;
 }
-input{
-    text-align:center;
- }
+
+input {
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+}
+
+.nav-hide {
+    display: none;
+}
+
+.card {
+    margin: 2.0vw;
+    width: 180px;
+}
+
+.card-img-top {
+    height: 140px;
+    object-fit: cover;
+}
