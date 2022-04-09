@@ -57,12 +57,12 @@ Event.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-// Event.belongsTo(Activity, {
-//     foreignKey: 'activity_id',
-// });
+Event.belongsTo(Activity, {
+    foreignKey: 'activity_id',
+});
 
 Event.hasMany(Comment, {
-    foreignKey: 'comment_id',
+    foreignKey: 'event_id',
 });
 
 Event.belongsTo(Location, {
@@ -75,9 +75,9 @@ Comment.belongsTo(User, {
     onDelete: "cascade"
 });
 
-// Comment.belongsTo(Event, {
-//     foreignKey: 'event_id',
-// });
+Comment.belongsTo(Event, {
+    foreignKey: 'event_id',
+});
 
 module.exports = {
     User,

@@ -105,10 +105,7 @@ router.get('/popular-activities', (req, res) => {
   })
     .then(dbActivityData => {
       const activities = dbActivityData.map(items => items.get({ plain: true }));
-      console.log(activities);
-      console.log("FUN!!!    --------------  ", req.session.loggedIn);
       let sessionInfo = req.session;
-      console.log('Your session ID SIR!  ____-----~~~~~ ', req.session);
       res.render('popular-activities', {
         activities,
         sessionInfo
@@ -120,5 +117,68 @@ router.get('/popular-activities', (req, res) => {
     });
 });
 
+//http://localhost:3001/browse-events
+router.get('/browse-events', authenticatedUser, (req, res) => {
+  Event.findAll({
+    attributes: [
+      'id',
+      'event_name',
+      'description',
+      'time_begin',
+      'time_end',
+      'max_participants',
+      'min_participants',
+      'creator_id',
+      'location_id',
+      'activity_id'
+    ],
+    include: [
+      {
+        model: Activity,
+        attributes: [
+          'id',
+          'title',
+          'type',
+          'category',
+          'style',
+          'license_required',
+          'risk_level',
+          'fee',
+          'max_participants',
+          'min_participants',
+          'image_url'
+        ]
+      },
+      {
+        model: Comment,
+        attributes: [
+          'id',
+          'comment_text',
+          'image'
+        ],
+        include: {
+          model: User,
+          attributes: [
+            'first_name',
+            'last_name'
+          ]
+        }
+      }
+    ]
+  })
+    .then(dbEventData => {
+      const events = dbEventData.map(items => items.get({ plain: true }));
+      console.log('GOOOOOOOOOOOOOOOD - ', events);
+      let sessionInfo = req.session;
+      res.render('choose-event', {
+        events,
+        sessionInfo
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;

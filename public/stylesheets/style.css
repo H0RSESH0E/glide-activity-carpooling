@@ -18,12 +18,22 @@ body {
     flex: 1 0 0;
 }
 
+.yuppie {
+    width: 100%;
+}
+
 .scrollable {
     overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 
 /* NAVIGATION */
+.login-name {
+    line-height: 1;
+    font-size: 1.5em;
+}
 
 .web-nav {
     background-color: var(--main-blue);
@@ -31,7 +41,7 @@ body {
     padding: 2vw 2vh;
     width:max-content;
     /* position: fixed; */
-    min-width: 300px;
+    min-width: 310px;
 }
 
 .nav-column {
@@ -39,10 +49,7 @@ body {
     font-size: 1.3em;
 }
 
-/* .nav-row {
-    line-height: 3;
-    font-size: 1.3em;
-} */
+
 
 button[type="submit"],
 .btn {
@@ -60,12 +67,7 @@ button[type="submit"]:hover,
     border: none;
 }
 
-/* .nav-row a:hover,
-button[type="submit"]:hover,
-.btn:hover {
-    color: #fd457d;
-    border: none;
-} */
+
 
 nav {
     display: flex;
@@ -255,6 +257,7 @@ header {
 
 .main-heading {
     padding: 15px;
+
 }
 
 .light-on-dark {
