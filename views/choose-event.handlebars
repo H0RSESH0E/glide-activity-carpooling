@@ -2,7 +2,7 @@
 
     {{> side-bar sessionInfo }}
 
-    <main class="scrollable yuppie">
+    <main class="scrollable">
 
         <div class="row  justify-content-center">
             <header class="col-12 d-flex justify-content-center">
@@ -12,8 +12,8 @@
 
         <section class="row">
             <div class="col-12 d-flex justify-content-center flex-wrap">
-                {{#each activities as |item|}}
-                {{> activity-container item }}
+                {{#each events as |item|}}
+                {{> event-container item }}
                 {{/each}}
             </div>
         </section>
