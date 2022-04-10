@@ -1,5 +1,8 @@
 const router = require('express').Router();
 const { Event, Activity, User, Vehicle, Comment, Location, } = require('../../models');
+const moment = require('moment');
+
+
 
 // GET /api/event
 router.get('/', (req, res) => {
@@ -52,11 +55,13 @@ router.get('/:id', (req, res) => {
                 res.status(404).json({ message: 'No event found with this id' });
                 return;
             }
-            // console.log('555555555555=====', dbEventData);
-            // res.json(dbEventData);
             let sessionInfo = req.session;
             const event = dbEventData.get({ plain: true });
-            // res.json(event);
+            console.log(event);
+            event.time_begin = moment(event.time_begin).startOf('hour').format('lll');
+            event.time_end = moment(event.time_end).startOf('hour').format('lll')
+
+
             res.render('single-event', {
                 event,
                 sessionInfo
