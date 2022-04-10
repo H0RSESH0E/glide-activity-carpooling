@@ -41,6 +41,7 @@ body {
     width: max-content;
     /* position: fixed; */
     min-width: 310px;
+    opacity: 0.95;
 }
 
 .nav-column {
@@ -55,15 +56,17 @@ button[type="submit"],
     background-color: var(--button-blue);
     color: #fff;
     width: 40%;
+    width: max-content;
     font-size: 1.3rem;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .nav-column a:hover,
 button[type="submit"]:hover,
 .btn:hover {
     color: #fd457d;
-    border: none;
+    /* border: none; removing the border causes layout changes - making it transparent will achieve the same without affecting layout*/
+    border-color: rgba(255, 255, 255, 0);
 }
 
 
@@ -139,18 +142,29 @@ body {
     justify-items: center;
 }
 
+form {
+    width: 100%;
+
+}
 
 /* LOGIN PAGE */
 
-.signupForm,
-.login-form {
+form {
     background-color: #fff;
     opacity: 0.9;
     padding: 20px;
 }
 
+/* .signupForm,
+.login-form {
+    background-color: #fff;
+    opacity: 0.9;
+    padding: 20px;
+} */
+
 input {
     width: 100%;
+
     border: none;
     border-bottom: 1px solid Black;
     line-height: 4;
@@ -229,9 +243,9 @@ input {
 }
 
 .icon {
-width: 16vw;
-max-width: 65px;
-margin-left: 15px;
+    width: 16vw;
+    max-width: 65px;
+    margin-left: 15px;
 }
 
 .nav-menu {
@@ -267,8 +281,18 @@ margin-left: 15px;
 
 /* FORMS */
 
+
 main {
-    background-color: #fff;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+label {
+    color: var(--main-blue)
+}
+
+input {
+    margin: 8px 0px;
 }
 
 .scrollable {
@@ -323,6 +347,9 @@ header {
     background-color: grey;
 }
 
+#dashboard-table {
+    --bs-table-bg: #1f1965da !important;
+}
 
 
 /* mobile */

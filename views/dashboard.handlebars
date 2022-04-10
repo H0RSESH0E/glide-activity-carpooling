@@ -1,7 +1,36 @@
-    <main>
 {{!-- A large table listing upcoming events in liked activities--}}
 {{!-- A small table of what types of activities have been liked --}}
-<h1>DASHBOARD HANDLEBARS LOADED</h1>
+<div class="row">
+    <header class="col-12 d-flex justify-content-center">
+        <h2 class="main-heading light-on-dark">Dashboard</h2>
+    </header>
+</div>
+<div class="row d-flex justify-content-center">
+    <div class="col-11">
+        <table id="dashboard-table" class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Event Name</th>
+                    <th scope="col">Type of Activity</th>
+                    <th scope="col">Starts</th>
+                </tr>
+            </thead>
+            <tbody>
 
+                {{#each myEvents as |item|}}
+                <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{event_name}}</td>
+                    <td>{{activity_type}}</td>
+                    <td>{{start_date_time}}</td>
+                </tr>
+
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
 {{!-- MORE HTML GOES HERE --}}
-    </main>

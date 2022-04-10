@@ -3,39 +3,43 @@
 
         <div>
             {{#if loggedIn}}
-            <div class="row d-flex">
+            <div class="row">
                 <h2 class="col-12 light-on-dark login-name">Hi {{first_name}}!</h2>
             </div>
-            {{/if}}
             <hr>
+            <div class="row">
+                <img src="/profile-icon.svg" alt="" class="col-lg-3 col-sm-3">
+                <a href="/dashboard" class="col-lg-9 col-sm-9">My Dashboard</a>
+            </div>
+            {{/if}}
 
-            <div class="row d-flex align-items-center">
+            <div class="row">
                 <img src="/star-icon.svg" alt="" class="col-lg-3 col-sm-3">
                 <a href="/popular-activities" class="col-lg-9 col-sm-9">Popular Activities</a>
             </div>
 
-            <div class="row d-flex align-items-center">
+            <div class="row">
                 <img src="/star-icon.svg" alt="" class="col-lg-3 col-sm-3">
                 <a href="/browse-events" class="col-lg-9 col-sm-9">Browse Events</a>
             </div>
 
             {{#if loggedIn}}
-            <div class="row d-flex align-items-center">
+            <div class="row">
                 <img src="/vehicle-cab-icon.svg" alt="" class="col-lg-3 col-sm-3">
                 <a href="/create-vehicle" class="col-lg-9 col-sm-9">Create a Vehicle</a>
             </div>
 
-            <div class="row d-flex align-items-center">
+            <div class="row">
                 <img src="/vehicle-cab-icon.svg" alt="" class="col-lg-3 col-sm-3">
                 <a href="/create-event" class="col-lg-9 col-sm-9">Create an Event</a>
             </div>
 
-            <div class="row d-flex align-items-center">
+            <div class="row">
                 <img src="/profile-icon.svg" alt="" class="col-lg-3 col-sm-3">
                 <a href="/profile-edit" class="col-lg-9 col-sm-9">Edit Profile</a>
             </div>
 
-            <div id="logout" class="row d-flex">
+            <div class="row logout-btn">
                 <img src="/profile-icon.svg" alt="" class="col-lg-3 col-sm-3">
                 <a href="" class="col-lg-9 col-sm-9">Sign Out</a>
             </div>

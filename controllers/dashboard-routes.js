@@ -6,8 +6,80 @@ const withAuth = require('../utils/auth');
 // http://localhost:3001/dashboard
 router.get('/', (req, res) => {
 
-    let sessionInfo = req.session;
-    res.render('dashboard',{ sessionInfo });
+    Event.findAll({
+      // raw: true,
+      attributes: [
+        'id',
+        'event_name',
+        'description',
+        'time_begin',
+        'time_end',
+        'max_participants',
+        'min_participants',
+        'creator_id',
+        'location_id',
+        'activity_id'
+      ],
+      include: [
+        {
+          model: Activity,
+          attributes: [
+            'id',
+            'title',
+            'type',
+            'category',
+            'style',
+            'license_required',
+            'risk_level',
+            'fee',
+            'max_participants',
+            'min_participants',
+            'image_url'
+          ]
+        },
+        {
+          model: Comment,
+          
+          attributes: [
+            'id',
+            'comment_text',
+            'image'
+          ],
+  
+          include: {
+            model: User,
+            attributes: [
+              'first_name',
+              'last_name'
+            ]
+          }
+        },
+        {
+          model: Location,
+          attributes: [
+            'city'
+          ]
+        }
+      ]
+    })
+      .then(dbEventData => {
+        const events = dbEventData.map(items => items.get({ plain: true }));
+        events.forEach((element) =>{
+          element.time_begin = moment(element.time_begin).startOf('hour').format('lll');
+          element.time_end = moment(element.time_end).startOf('hour').format('lll')
+        });
+        let sessionInfo = req.session;
+        console.log("------------------------router.get('/browse-events', authenticatedUser, (req, res) => -------------------------", sessionInfo)
+        res.render('dashboard', {
+          events,
+          sessionInfo
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+
 });
 
 // http://localhost:3001/single-event
