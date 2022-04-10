@@ -218,14 +218,21 @@ input {
     z-index: 100;
     background-color: var(--main-blue);
     opacity: 0.9;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 450px;
+    top: 60px;
+    /* left: 180px; */
+    right: 60px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 75vw;
+    max-width: 450px;
 
 }
 
+.icon {
+width: 16vw;
+max-width: 65px;
+margin-left: 15px;
+}
 
 .nav-menu {
     height: 90vh;
