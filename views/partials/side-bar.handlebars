@@ -1,44 +1,44 @@
-<div class="row side-bar nav-column nav-hide web-nav">
+<div class="row side-bar nav-column nav-hide web-nav col-lg-2">
     <div class="col-12 d-flex flex-column justify-content-between">
 
         <div>
             {{#if loggedIn}}
             <div class="row d-flex">
-            <h2 class="col-12 light-on-dark login-name">Hi {{first_name}}!</h2>
+                <h2 class="col-12 light-on-dark login-name">Hi {{first_name}}!</h2>
             </div>
             {{/if}}
             <hr>
 
             <div class="row d-flex align-items-center">
-                <img src="star-icon.svg" alt="" class="col-lg-3 col-sm-3">
-                <a href="/popular-activities" class="col-lg-9 col-sm-9">Popular Activities</a>
+                <img src="star-icon.svg" alt="" class="col-lg-2 col-md-2 col-sm-3">
+                <a href="/popular-activities" class="col-lg-10 col-md-10 col-sm-9">Popular Activities</a>
             </div>
 
             <div class="row d-flex align-items-center">
-                <img src="star-icon.svg" alt="" class="col-lg-3 col-sm-3">
-                <a href="/browse-events" class="col-lg-9 col-sm-9">Browse Events</a>
+                <img src="star-icon.svg" alt="" class="col-lg-2 col-md-2 col-sm-3">
+                <a href="/browse-events" class="col-lg-10 col-md-10 col-sm-9">Browse Events</a>
             </div>
 
             <div class="row d-flex align-items-center">
-                <img src="vehicle-cab-icon.svg" alt="" class="col-lg-3 col-sm-3">
-                <a href="/create-vehicle" class="col-lg-9 col-sm-9">Create a Vehicle</a>
+                <img src="vehicle-cab-icon.svg" alt="" class="col-lg-2 col-md-2 col-sm-3">
+                <a href="/create-vehicle" class="col-lg-10 col-md-10 col-sm-9">Create a Vehicle</a>
             </div>
 
             <div class="row d-flex align-items-center">
-                <img src="vehicle-cab-icon.svg" alt="" class="col-lg-3 col-sm-3">
-                <a href="/create-event" class="col-lg-9 col-sm-9">Create an Event</a>
+                <img src="vehicle-cab-icon.svg" alt="" class="col-lg-2 col-md-2 col-sm-3">
+                <a href="/create-event" class="col-lg-10 col-md-10 col-sm-9">Create an Event</a>
             </div>
 
             <div class="row d-flex align-items-center">
-                <img src="profile-icon.svg" alt="" class="col-lg-3 col-sm-3">
-                <a href="/profile-edit" class="col-lg-9 col-sm-9">Edit Profile</a>
+                <img src="profile-icon.svg" alt="" class="col-lg-2 col-md-2 col-sm-3">
+                <a href="/profile-edit" class="col-lg-10 col-md-10 col-sm-9">Edit Profile</a>
             </div>
 
 
             {{#if loggedIn}}
             <div class="row d-flex">
-                <img src="profile-icon.svg" alt="" class="col-lg-3 col-sm-3">
-                <a href="/signout" class="col-lg-9 col-sm-9">Sign Out</a>
+                <img src="logout-icon.svg" alt="" class="col-lg-2 col-md-2 col-sm-3">
+                <a href="/logout" class="col-lg-10 col-md-10 col-sm-9" id="logout">Sign Out</a>
             </div>
             {{/if}}
         </div>
@@ -50,3 +50,7 @@
 
     </div>
 </div>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}

@@ -1,20 +1,32 @@
+<div class="outer-div">
 
-{{> side-bar }}
-<main class="col-lg-9 col-md-8 col-sm-12">
-  <a href="/dashboard"> &larr; Back to My dashboard</a>
-  <h2>Edit Profile</h2>
-  <form class="edit-profile"></form>
-  <div>
-    <input name="edit-first_name" type="text" value="{{User.first_name}}" />
-    <span>{{User.first_name}}</span>
-    |
-    <input name="edit-last-name" type="text" value="{{User.last_name}}" />
-    <span>{{User.last_name}}</span>
-    |
-    <input name="edit-email" type="text" value="{{user.email}}" />
-    <span>{{email}}</span>
-  </div>
-  <button type="submit" class="btn">Save changes</button>
-  </form>
-</main>
+  {{> side-bar sessionInfo }}
+
+  <main class="scrollable">
+
+    <div class="row">
+      <header class="col-12 d-flex justify-content-center">
+        <h2>Edit Profile</h2>
+      </header>
+    </div>
+
+    <section class="row">
+      <div class="col-12 d-flex justify-content-center flex-wrap">
+        <form class="edit-profile ">
+          <label for="edit-first_name">First Name</label>
+          <input name="edit-first_name" type="text" value={{first_name}} />
+          <label for="edit-last_name">Last Name</label>
+          <input name="edit-last_name" type="text" value={{last_name}} />
+          <label for="edit-email">Email</label>
+          <input name="edit-email" type="text" value={{email}} />
+          <button type=" submit" class="btn">Save changes</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+
 <script src="/javascript/edit-user.js"></script>
+<script src="/javascript/nav-bar.js"></script>

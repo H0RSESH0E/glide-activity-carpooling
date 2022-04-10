@@ -1,17 +1,18 @@
 const router = require('express').Router();
-const { User, Activity, Vehicle, Comment, Event, Location, } = require('../../models');
+const { User, Activity, Vehicle, Comment, Event, Location } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method to find all users
-    User.findAll({ include: [{ all: true, nested: true }]
-        // attributes: { exclude: ['password'] }
-    })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    User.findAll({
+            include: [{ all: true, nested: true }]
+                // attributes: { exclude: ['password'] }
+        })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 // GET /api/users/1
@@ -80,6 +81,7 @@ router.post('/', (req, res) => {
                 req.session.email = dbUserData.email;
                 req.session.password = dbUserData.password;
                 req.session.loggedIn = true;
+                console.log(req.session)
 
                 res.json(dbUserData);
             });
@@ -90,6 +92,8 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
             email: req.body.email
         }
     }).then(dbUserData => {
@@ -108,6 +112,8 @@ router.post('/login', (req, res) => {
         req.session.save(() => {
             // declare session variables
             req.session.user_id = dbUserData.id;
+            req.session.first_name = dbUserData.first_name;
+            req.session.last_name = dbUserData.last_name;
             req.session.email = dbUserData.email;
             req.session.loggedIn = true;
 

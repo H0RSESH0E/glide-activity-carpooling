@@ -4,14 +4,14 @@
 
     <main class="scrollable">
 
-        <div class="row  justify-content-center">
+        <div class="row justify-content-center">
             <header class="col-12 d-flex justify-content-center">
                 <h2 class="main-heading light-on-dark">Find an Event</h2>
             </header>
         </div>
 
         <section class="row">
-            <div class="col-12 d-flex justify-content-center flex-wrap">
+            <div class="col-12 d-flex justify-content-center flex-wrap event-container">
                 {{#each events as |item|}}
                 {{> event-container item }}
                 {{/each}}
@@ -20,3 +20,5 @@
 
     </main>
 </div>
+
+<script src="/javascript/nav-bar.js"></script>

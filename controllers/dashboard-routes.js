@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 
 // http://localhost:3001/dashboard
 router.get('/', (req, res) => {
-    res.render('dashboard');
+    res.render('browse-events');
 });
 
 // http://localhost:3001/single-event
@@ -21,6 +21,9 @@ router.get('/create-vehicle', (req, res) => {
 //http://localhost:3001/create-event
 router.get('/create-event', (req, res) => {
     res.render('create-event');
+});
+router.get('/profile-edit', (req, res) => {
+    res.render('profile-edit');
 });
 
 module.exports = router;

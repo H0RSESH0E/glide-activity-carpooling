@@ -1,49 +1,54 @@
-{{> nav-bar }}
-<style>
-  main {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0);
-    }
-  label {
-  color:whitesmoke
-  }
-</style>
-<main class="col-lg-9 col-md-8 col-sm-12" id="editSubmit">
-  <section class="lading page col-lg-9 col-md-8 col-sm-12">
-    <a href="/dashboard"> &larr; Back to My dashboard</a>
-  <h2 style="color:whitesmoke">Create an Event</h2>
+<div class="outer-div">
 
-  <form class="event-create">
-    <div>
-      <label for="event-name">Event Name:</label>
-      <input type="text" id="event-name" name="name" placeholder="Example: Fishing" />
-    </div>
-    <div>
-      <label for="event-description">Description:</label>
-      <input type="text" id="event-description" name="description" placeholder="Example: Float and fly fish the Notty!" />
-    </div>
-    <div>
-      <label for="event-location">Location:</label>
-      <input type="text" id="event-location" name="location" placeholder="Example: Nottawasaga, ON" />
-    </div>
-    <div>
-      <label for="event-begining-time">Begining Time:</label>
-      <input type="time" id="event-begining-time" name="time-begin" placeholder="Choose from calander" />
-    </div>
-    <div>
-      <label for="event-end-time">Ending Time:</label>
-      <input type="time" id="event-end-time" name="time-end" placeholder="Choose from calander" />
-    </div>
-    <div>
-      <label for="event-max-participants">Participants:</label>
-      <input type="number" id="event-max-participants" name="max_participants" placeholder="Max Participants" />
-    </div>
-    <div>
-      <label for="event-min-participants">Participants:</label>
-      <input type="number" id="event-min-participants" name="min_participants" placeholder="Min Participants" />
-    </div>
-    <button type="submit" class="btn btn-light">Create</button>
-  </form>
+  {{> side-bar sessionInfo }}
 
-</main>
+  <main class="scrollable">
+
+    <div class="row">
+      <header class="col-12 d-flex justify-content-center">
+        <h2>Create an Event</h2>
+      </header>
+    </div>
+
+    <section class="row">
+      <div class="col-12 d-flex justify-content-center flex-wrap">
+        <form class="event-create">
+          <div>
+            <label for="event-name">Event Name:</label>
+            <input type="text" id="event-name" name="name" placeholder="Example: Fishing" />
+          </div>
+          <div>
+            <label for="event-description">Description:</label>
+            <input type="text" id="event-description" name="description"
+              placeholder="Example: Float and fly fish the Notty!" />
+          </div>
+          <div>
+            <label for="event-location">Location:</label>
+            <input type="text" id="event-location" name="location" placeholder="Example: Nottawasaga, ON" />
+          </div>
+          <div>
+            <label for="event-begining-time">Begining Time:</label>
+            <input type="time" id="event-begining-time" name="time-begin" placeholder="Choose from calander" />
+          </div>
+          <div>
+            <label for="event-end-time">Ending Time:</label>
+            <input type="time" id="event-end-time" name="time-end" placeholder="Choose from calander" />
+          </div>
+          <div>
+            <label for="event-max-participants">Participants:</label>
+            <input type="number" id="event-max-participants" name="max_participants" placeholder="Max Participants" />
+          </div>
+          <div>
+            <label for="event-min-participants">Participants:</label>
+            <input type="number" id="event-min-participants" name="min_participants" placeholder="Min Participants" />
+          </div>
+          <button type="submit" class="btn btn-light">Create</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+</div>
+
 <script src="/javascript/add-event.js"></script>
+<script src="/javascript/nav-bar.js"></script>
