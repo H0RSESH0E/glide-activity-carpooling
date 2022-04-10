@@ -13,8 +13,8 @@ body {
 .outer-div {
     display: flex;
     height: 100%;
-    background-color: #457ffd;
 }
+
 .side-bar {
     flex: 1 0 0;
 }
@@ -38,7 +38,7 @@ body {
     background-color: var(--main-blue);
     min-height: 100vh;
     padding: 2vw 2vh;
-    width:max-content;
+    width: max-content;
     /* position: fixed; */
     min-width: 310px;
 }
@@ -212,9 +212,18 @@ input {
 }
 
 .navMenu {
-display: none;
-position: absolute;
-z-index: 100;
+    display: none;
+    position: absolute;
+    margin: 0 auto;
+    z-index: 100;
+    background-color: var(--main-blue);
+    opacity: 0.9;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+
 }
 
 
@@ -255,7 +264,7 @@ main {
     background-color: #fff;
 }
 
-.scrollable{
+.scrollable {
     background: none;
 }
 
@@ -321,7 +330,7 @@ header {
         width: 60%;
         border-radius: 10px;
         /* text-align: center; */
-      transition: 0.3s;
+        transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     }
 
@@ -329,7 +338,7 @@ header {
         left: 0;
     }
 
- 
+
     .hamburger {
         display: block;
         cursor: pointer;
@@ -419,24 +428,26 @@ header {
     .nav-hide {
         display: none;
     }
+
     .card {
         margin: 2.0vw;
         width: 180px;
     }
-    
+
     .card-img-top {
         height: 140px;
         object-fit: cover;
     }
 }
 
-#editSubmit{
-display:flex;
-flex: 1 0 10vw;
-justify-content:center;
-width: 50%;
-height: 80%;
+#editSubmit {
+    display: flex;
+    flex: 1 0 10vw;
+    justify-content: center;
+    width: 50%;
+    height: 80%;
 }
-input{
-    text-align:center;
- }
+
+input {
+    text-align: center;
+}

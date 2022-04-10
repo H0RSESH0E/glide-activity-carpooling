@@ -13,7 +13,7 @@ function mobileMenu() {
         outerDiv.style.opacity = "1"
       } else {
         navMenu.style.display = "block";
-        outerDiv.style.opacity = "0.2"
+        outerDiv.style.opacity = "0.15"
 
       }
 
