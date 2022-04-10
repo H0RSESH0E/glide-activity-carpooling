@@ -1,48 +1,57 @@
-<div class="navbar">
-    <div class="cell-nav-header ">
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+<div class="row navbar">
+    <div class="col-12 d-flex justify-content-between">
+        <div id="navbar-logo">
+            <a href="/"><img src="logo.svg" alt="Glide carpool app logo" width="130vw"></a>
         </div>
-        <a href="/"><img src="logo.svg" alt="Glide carpool app logo" width="130vw"></a>
-        <a href="/single-event">Events</a>
-        <a href="/profile-edit">Profile</a>
+        <div class="row">
+            <div id="hamburger" class="column-12 d-flex flex-column justify-content-center">
+                <a href="javascript:void(0);">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
+        </div>
     </div>
-    <ul class="nav-menu">
-        {{#if loggedIn}}
-        <h1>{{{User.last_name}}}{{User.first_name}}</h1>
-
-        {{/if}}
-        <hr>
-        <div class="nav-item">
-            <img class="col-lg-2 col-sm-2" src="star-icon.svg" width="18vw" alt="">
-            <a href="/single-activity" class="col-lg-10 col-sm-10 nav-link">Popular Activities</a>
-        </div>
-        <div class="nav-item">
-            <img class="col-lg-2 col-sm-2" src="star-icon.svg" width="18vw" alt="">
-            <a href="/single-event" class="col-lg-10 col-sm-10 nav-link">Choose an Event</a>
-        </div>
-        <div class="nav-item">
-            <img class="col-lg-2 col-sm-2" src="vehicle-cab-icon.svg" width="18vw" alt="">
-            <a href="/create-vehicle" class="col-lg-10 col-sm-10 nav-link">Create a Vehicle</a>
-        </div>
-        <div class="nav-item">
-            <img class="col-lg-2 col-sm-2" src="vehicle-cab-icon.svg" width="18vw" alt="">
-            <a href="/create-event" class="col-lg-10 col-sm-10 nav-link">Create an Event</a>
-        </div>
-        <div class="nav-item">
-            <img class="col-lg-2 col-sm-2" src="profile-icon.svg" width="18vw" alt="">
-            <a href="/profile-edit" class="col-lg-10 col-sm-10 nav-link">Edit Profile</a>
-        </div>
-        {{#if loggedIn}}
-        <div class="nav-item">
-            <img class="col-lg-2 col-sm-2" src="profile-icon.svg" width="18vw" alt="">
-            <a href="/" class="col-lg-10 col-sm-10" href="/signout" class="nav-link">Sign Out</a>
-        </div>
-        {{/if}}
-
-    </ul>
 </div>
 
-<script src="/javascript/navbar.js"></script>
+{{!-- Display: none untill hamburger is toggled --}}
+<ul class="navMenu">
+    {{#if loggedIn}}
+    <h1>{{{User.last_name}}}{{User.first_name}}</h1>
+
+    {{/if}}
+    <hr>
+    <div class="nav-item">
+        <img class="col-lg-2 col-sm-2" src="star-icon.svg" width="18vw" alt="">
+        <a href="/single-activity" class="col-lg-10 col-sm-10 nav-link">Popular Activities</a>
+    </div>
+    <div class="nav-item">
+        <img class="col-lg-2 col-sm-2" src="star-icon.svg" width="18vw" alt="">
+        <a href="/single-event" class="col-lg-10 col-sm-10 nav-link">Choose an Event</a>
+    </div>
+    <div class="nav-item">
+        <img class="col-lg-2 col-sm-2" src="vehicle-cab-icon.svg" width="18vw" alt="">
+        <a href="/create-vehicle" class="col-lg-10 col-sm-10 nav-link">Create a Vehicle</a>
+    </div>
+    <div class="nav-item">
+        <img class="col-lg-2 col-sm-2" src="vehicle-cab-icon.svg" width="18vw" alt="">
+        <a href="/create-event" class="col-lg-10 col-sm-10 nav-link">Create an Event</a>
+    </div>
+    <div class="nav-item">
+        <img class="col-lg-2 col-sm-2" src="profile-icon.svg" width="18vw" alt="">
+        <a href="/profile-edit" class="col-lg-10 col-sm-10 nav-link">Edit Profile</a>
+    </div>
+    {{#if loggedIn}}
+    <div class="nav-item">
+        <img class="col-lg-2 col-sm-2" src="profile-icon.svg" width="18vw" alt="">
+        <a href="/" class="col-lg-10 col-sm-10" href="/signout" class="nav-link">Sign Out</a>
+    </div>
+    {{/if}}
+
+</ul>
+
+
+
+
+

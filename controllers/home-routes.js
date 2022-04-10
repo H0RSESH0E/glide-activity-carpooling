@@ -41,8 +41,10 @@ router.get('/single-event', (req, res) => {
 
 // GET method to create vehicle
 router.get('/create-vehicle', (req, res) => {
+  let sessionInfo = req.session;
+
   if (req.session.loggedIn) {
-    res.render('create-vehicle', { views: ['create-vehicle.handlebars'] });
+    res.render('create-vehicle', { views: ['create-vehicle.handlebars'], sessionInfo });
   }
   // else {
   //   res.render('login', {views: ['login.handlebars']});
@@ -51,8 +53,10 @@ router.get('/create-vehicle', (req, res) => {
 
 // GET method to create events
 router.get('/create-event', (req, res) => {
+  let sessionInfo = req.session;
+
   if (req.session.loggedIn) {
-    res.render('create-event', { views: ['create-event.handlebars'] });
+    res.render('create-event', { views: ['create-event.handlebars'], sessionInfo });
   }
   // else {
   //   res.render('login', {views: ['login.handlebars']});
@@ -61,8 +65,9 @@ router.get('/create-event', (req, res) => {
 
 // GET method to profile edit
 router.get('/profile-edit', authenticatedUser, (req, res) => {
+  let sessionInfo = req.session;
   if (req.session.loggedIn) {
-    res.render('profile-edit', { views: ['profile-edit.handlebars'] });
+    res.render('profile-edit', { views: ['profile-edit.handlebars'],sessionInfo });
   }
   // else {
   //   res.render('login', {views: ['login.handlebars']});

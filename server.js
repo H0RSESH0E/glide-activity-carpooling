@@ -29,7 +29,8 @@ const sess = {
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
-        db: sequelize
+        db: sequelize,
+  
     })
 };
 
@@ -54,7 +55,7 @@ app.use(routes);
 // app.use(require('./controllers'));
 
 app.get('/', (req, res) => {
-    res.render('home', {title: "homepage"})
+    res.render('home', { title: "homepage" })
 });
 
 // turn on connection to db and server

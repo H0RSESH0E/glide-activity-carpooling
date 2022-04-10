@@ -109,14 +109,17 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'Incorrect password!' });
             return;
         }
-        console.log('---------------============((((((((((((((((()))))))))))))))================----------------');
+        console.log('---(((((((((((((((((',req.session,')))))))))))))))--');
 
         req.session.save(() => {
             // declare session variables
             req.session.user_id = dbUserData.id;
+            req.session.first_name = dbUserData.first_name;
+            req.session.last_name = dbUserData.last_name;
             req.session.email = dbUserData.email;
-            req.session.loggedIn = true;
-
+            req.session.password = dbUserData.password;
+        req.session.loggedIn = true;
+            console.log('---------------===((',req.session,'))===----------------');
             res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
     });
