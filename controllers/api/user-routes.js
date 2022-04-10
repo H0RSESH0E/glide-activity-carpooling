@@ -97,19 +97,19 @@ router.post('/login', (req, res) => {
         }
     }).then(dbUserData => {
         if (!dbUserData) {
-            console.log("-------- user-routes.js ---router.post('/login', (req, res) =>--- dbUserData: ", dbUserData);
+            console.log("-------- user-routes.js ---No user with that email!--- dbUserData: ", dbUserData);
             res.status(418).json({ message: 'No user with that email!' });
             return;
         }
 
-        console.log('-------- user-routes.js ------ dbUserData: ', dbUserData);
+        console.log('-------- user-routes.js ---checkPassword--- dbUserData: ', dbUserData);
         const validPassword = dbUserData.checkPassword(req.body.password);
 
         if (!validPassword) {
             res.status(400).json({ message: 'Incorrect password!' });
             return;
         }
-        console.log('---(((((((((((((((((',req.session,')))))))))))))))--');
+        console.log('---(((((((( PASSWORD GOOD (((((((((',req.session);
 
         req.session.save(() => {
             // declare session variables
@@ -119,8 +119,12 @@ router.post('/login', (req, res) => {
             req.session.email = dbUserData.email;
             req.session.password = dbUserData.password;
         req.session.loggedIn = true;
-            console.log('---------------===((',req.session,'))===----------------');
-            res.json({ user: dbUserData, message: 'You are now logged in!' });
+            console.log('-------- SESSION CREATED -------===((',req.session);
+            let sessionInfo = req.session;
+            res.render('dashboard', {
+                sessionInfo
+              });            // res.json({ user: dbUserData, message: 'You are now logged in!' });
+
         });
     });
 });

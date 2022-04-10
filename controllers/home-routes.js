@@ -7,10 +7,12 @@ const { Activity, User, Vehicle, Comment, Event, Location, Participant } = requi
 const moment = require('moment');
 
 router.get("/", (req, res) => {
+  let sessionInfo = req.session;
+
   if (req.session.loggedIn) {
     res.redirect("/popular-activities");
   } else {
-    res.render('homepage', { views: ['homepage.handlebars'] });
+    res.render('homepage', { views: ['homepage.handlebars'], sessionInfo  });
   }
 });
 
@@ -31,8 +33,10 @@ router.get('/homepage', (req, res) => {
 
 // GET method to single event
 router.get('/single-event', (req, res) => {
+  let sessionInfo = req.session;
+
   if (req.session.loggedIn) {
-    res.render('single-event', { partials: ['single-event.handlebars'] });
+    res.render('single-event', { partials: ['single-event.handlebars'], sessionInfo  });
   }
   // else {
   //   res.render('login', {views: ['login.handlebars']});
@@ -67,7 +71,7 @@ router.get('/create-event', (req, res) => {
 router.get('/profile-edit', authenticatedUser, (req, res) => {
   let sessionInfo = req.session;
   if (req.session.loggedIn) {
-    res.render('profile-edit', { views: ['profile-edit.handlebars'],sessionInfo });
+    res.render('profile-edit', { views: ['profile-edit.handlebars'], sessionInfo });
   }
   // else {
   //   res.render('login', {views: ['login.handlebars']});

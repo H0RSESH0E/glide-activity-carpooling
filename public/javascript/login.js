@@ -13,9 +13,10 @@ async function loginFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-        console.log("-------const response = await fetch('/api/users/login', {---------", response.trailers)
         if (response.ok) {
-            document.location.replace('dashboard');
+
+            console.log("------- login.js ------ RESPONSE.OK -------- response:", response)
+            document.location.replace('/dashboard');
 
         } else {
             alert(response.statusText);
