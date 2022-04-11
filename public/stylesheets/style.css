@@ -40,7 +40,7 @@ body {
     padding: 2vw 2vh;
     width: max-content;
     /* position: fixed; */
-    min-width: 310px;
+    min-width: 350px;
     opacity: 0.95;
 }
 
@@ -242,14 +242,31 @@ input {
 
 }
 
+.navMenu-two {
+    /* display: none; */
+    position: static;
+    margin: 0 auto;
+    z-index: 100;
+    background-color: var(--main-blue);
+    opacity: 0.9;
+    /* left: 180px; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 75vw;
+    max-width: 360px;
+height: 100vh;
+}
+
 .icon {
-    width: 16vw;
+    width: 65px;
     max-width: 65px;
     margin-left: 15px;
 }
 
 .nav-menu {
-    height: 90vh;
+    background-color: var(--main-blue);
+
+    height: 100vh;
 }
 
 
