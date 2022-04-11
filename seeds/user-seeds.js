@@ -22,7 +22,7 @@ const userdata = async () => {
 
         users.push(newUser);
         }
-        console.log(users);
+        console.table(users);
         await User.bulkCreate(users, ({ individualHooks: true }));
     } catch (err) {
         console.error(err);

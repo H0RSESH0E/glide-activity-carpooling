@@ -21,7 +21,7 @@ const vehicledata = async () => {
 
         vehicles.push(newVehicle);
         }
-        console.log(vehicles);
+        console.table(vehicles);
        await Vehicle.bulkCreate(vehicles);
     } catch (err) {
         console.error(err);

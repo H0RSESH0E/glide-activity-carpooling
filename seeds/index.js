@@ -4,6 +4,8 @@ const locationdata = require('./location-seeds');
 const seedActivity = require('./activity-seeds');
 const eventdata = require('./event-seeds');
 const commentdata = require('./comment-seeds');
+const userActivityData = require('./userActJunc-seeds');
+
 
 const sequelize = require('../config/connection');
 
@@ -27,6 +29,11 @@ const seedAll = async () => {
 
     await commentdata();
     console.log('--------------');
+
+    await userActivityData();
+    console.log('--------------');
+
+
 
     process.exit(0);
 };
