@@ -28,10 +28,11 @@
         "express-session": "^1.17.2",
         "moment": "^2.29.2",
         "mysql2": "^2.3.3",
-        "sequelize": "^6.17.0"
+        "sequelize": "^6.17.0",
+        "@faker-js/faker": "^6.1.2"
+
     },
     "devDependencies": {
-        "@faker-js/faker": "^6.1.2",
         "nodemon": "^2.0.15"
     }
 }
