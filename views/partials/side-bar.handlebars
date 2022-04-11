@@ -1,18 +1,25 @@
-<div class="row navMenu-two nav-column ">
+<div class="row navMenu-two nav-column nav-hide">
     <div class="col-12 d-flex flex-column justify-content-start">
 
-    {{!-- web-nav nav-menu --}}
-    {{#if loggedIn}}
-    <div class="row d-flex align-items-center">
-        <h2 class="col-12 d-flex light-on-dark login-name justify-content-start" style="margin-top: 15px">Hi {{first_name}}!</h2>
-    </div>
-    {{else}}
-    <div class="row d-flex align-items-center">
-        <a href="/login">
-            <h2 class="col-12 d-flex light-on-dark login-name justify-content-center align-items-center"
-                style="margin-top: 15px">Login</h2>
-        </a>
-    </div>
+        {{!-- web-nav nav-menu --}}
+        {{#if loggedIn}}
+
+        <div class="row d-flex align-items-center">
+            <h2 class="col-12 d-flex light-on-dark login-name justify-content-start">Hi {{first_name}}!</h2>
+        </div>
+        
+        <div class="row d-flex align-items-center">
+            <img src="/vehicle-cab-icon.svg" alt="" class="col-3 icon">
+            <a href="/dashboard" class="col-9">Dashboard</a>
+        </div>
+
+        {{else}}
+
+        <div class="row d-flex align-items-center">
+            <a href="/login">
+                <h2 class="col-12 d-flex light-on-dark login-name justify-content-center align-items-center">Login</h2>
+            </a>
+        </div>
 
         {{/if}}
 
@@ -44,7 +51,7 @@
             <a href="/profile-edit" class="col-9">Edit Profile</a>
         </div>
 
-        <div class="logout-btn row d-flex align-items-center">
+        <div class="logout-btnA row d-flex align-items-center">
             <img src="/profile-icon.svg" alt="" class="col-3 icon">
             <a href="" class="col-9">Sign Out</a>
         </div>

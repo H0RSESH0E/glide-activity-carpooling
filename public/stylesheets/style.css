@@ -19,8 +19,6 @@ body {
     flex: 1 0 0;
 }
 
-
-
 .scrollable {
     overflow-y: auto;
     overflow-x: hidden;
@@ -32,6 +30,8 @@ body {
 .login-name {
     line-height: 1;
     font-size: 1.5em;
+    margin-top: 20px;
+    padding-left: 30px;
 }
 
 .web-nav {
@@ -450,7 +450,6 @@ header {
         margin: 20px;
         padding: 20px;
         height: 100vh;
-        background-color: rgb(128, 158, 135);
     }
 
     button .btn {

@@ -29,4 +29,5 @@ function inactivityTime() {
 };
 inactivityTime();
 
-document.querySelector('.logout-btn').addEventListener('click', logout);
+document.querySelector('.logout-btnA').addEventListener('click', logout);
+document.querySelector('.logout-btnB').addEventListener('click', logout);
