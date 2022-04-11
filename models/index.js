@@ -6,7 +6,7 @@ const Event = require('./Event');
 const Comment = require('./Comment');
 const Location = require('./Location');
 const UserActJunc = require('./UserActJunc');
-const UserEveJunc = require('./UserEveJunc');
+const UserEveJunc = require('./UserEveJuncRenamed');
 
 // USER
 // Users have many Activities
