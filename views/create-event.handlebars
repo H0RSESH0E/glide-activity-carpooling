@@ -1,0 +1,49 @@
+<div class="row d-flex justify-content-center">
+
+  <div class="row  justify-content-center">
+    <header class="col-12 d-flex justify-content-center">
+      <h2 class="main-heading light-on-dark">Create an Event</h2>
+    </header>
+  </div>
+
+  <main class="col-sm-9 col-md-6 col-xl-4 d-flex justify-content-center">
+    <form id="create-event" class="gupta">
+      <div>
+        <label for="event-name">Event Name:</label>
+        <input type="text" id="event-name" name="name" placeholder="Example: May 2-4 Fun" />
+      </div>
+      <div>
+        <label for="activity-name">Activity:</label>
+        <input type="text" id="activity-name" name="activity" placeholder="Example: Fishing" />
+      </div>
+      <div>
+        <label for="event-description">Description:</label>
+        <input type="text" id="event-description" name="description"
+          placeholder="Example: Float and fly fish the Notty!" />
+      </div>
+      <div>
+        <label for="event-location">Location:</label>
+        <input type="text" id="event-location" name="location" placeholder="Example: Nottawasaga, ON" />
+      </div>
+      <div>
+        <label for="event-begining-time">Begining Time:</label>
+        <input type="time" id="event-begining-time" name="time-begin" placeholder="Choose from calander" />
+      </div>
+      <div>
+        <label for="event-end-time">Ending Time:</label>
+        <input type="time" id="event-end-time" name="time-end" placeholder="Choose from calander" />
+      </div>
+      <div>
+        <label for="event-max-participants">Max Participants:</label>
+        <input type="number" id="event-max-participants" name="max_participants" placeholder="0" />
+      </div>
+      <div>
+        <label for="event-min-participants">Min Participants:</label>
+        <input type="number" id="event-min-participants" name="min_participants" placeholder="0" />
+      </div>
+      <button type="submit" class="btn btn-light">Create</button>
+    </form>
+  </main>
+</div>
+
+<script src="/javascript/add-event.js"></script>

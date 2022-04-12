@@ -1,33 +1,91 @@
 // import all models
-const Post = require('./Post');
+const Activity = require('./Activity');
 const User = require('./User');
+const Vehicle = require('./Vehicle');
+const Event = require('./Event');
 const Comment = require('./Comment');
+const Location = require('./Location');
+const UserActJunc = require('./UserActJunc');
+const UserEveJunc = require('./UserEveJunc');
 
-// create associations
-
-User.hasMany(Post, {
+// USER
+// Users have many Activities
+User.hasMany(Activity, {
     foreignKey: 'user_id'
 });
 
-Post.belongsTo(User, {
-    foreignKey: 'user_id'
-});
-
-Comment.belongsTo(User, {
-    foreignKey: 'user_id'
+User.hasMany(Vehicle, {
+    foreignKey: "user_id",
+    onDelete: "cascade"
 });
 
 User.hasMany(Comment, {
-    foreignKey: 'user_id'
+    foreignKey: "user_id",
+    // onDelete: "SET NULL"
 });
 
-Comment.belongsTo(Post, {
-    foreignKey: 'post_id'
+User.hasMany(Event, {
+    foreignKey: 'user_id',
 });
 
-Post.hasMany(Comment, {
-    foreignKey: 'post_id'
+User.belongsToMany(Event, {
+    as: 'participant',
+    foreignKey: 'user_id',
+    through: UserEveJunc
+})
+
+// VEHICLE
+Vehicle.belongsTo(User, {
+    foreignKey: 'user_id',
 });
 
+// Vehicle.belongsToMany(Event, {
+//     foreignKey: 'event_id'
+// });
 
-module.exports = { User, Post, Comment };
+// ACTIVITY
+Activity.hasMany(Event, {
+    foreignKey: 'event_id',
+});
+
+// Activity.belongsTo(Event, {
+//     foreignKey: 'event_id'
+// });
+
+// EVENT
+Event.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
+Event.belongsTo(Activity, {
+    foreignKey: 'activity_id',
+});
+
+Event.hasMany(Comment, {
+    foreignKey: 'event_id',
+});
+
+Event.belongsTo(Location, {
+    foreignKey: 'location_id',
+});
+
+// COMMENT
+Comment.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: "cascade"
+});
+
+Comment.belongsTo(Event, {
+    foreignKey: 'event_id',
+});
+
+module.exports = {
+    User,
+    Activity,
+    Comment,
+    Vehicle,
+    Location,
+    Event,
+    UserEveJunc,
+    UserActJunc,
+};

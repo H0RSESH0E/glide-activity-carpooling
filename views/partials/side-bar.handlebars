@@ -1,0 +1,64 @@
+<div class="row navMenu-two nav-column nav-hide">
+    <div class="col-12 d-flex flex-column justify-content-start">
+
+        {{!-- web-nav nav-menu --}}
+        {{#if loggedIn}}
+
+        <div class="row d-flex align-items-center">
+            <h2 class="col-12 d-flex light-on-dark login-name justify-content-start">Hi {{first_name}}!</h2>
+        </div>
+        
+        <div class="row d-flex align-items-center">
+            <img src="/vehicle-cab-icon.svg" alt="" class="col-3 icon">
+            <a href="/dashboard" class="col-9">Dashboard</a>
+        </div>
+
+        {{else}}
+
+        <div class="row d-flex align-items-center">
+            <a href="/login">
+                <h2 class="col-12 d-flex light-on-dark login-name justify-content-center align-items-center">Login</h2>
+            </a>
+        </div>
+
+        {{/if}}
+
+        <hr>
+
+        <div class="row d-flex align-items-center">
+            <img src="/star-icon.svg" alt="" class="col-3 icon">
+            <a href="/popular-activities" class="col-9">Popular Activities</a>
+        </div>
+
+        <div class="row d-flex align-items-center">
+            <img src="/star-icon.svg" alt="" class="col-3 icon">
+            <a href="/browse-events" class="col-9">Browse Events</a>
+        </div>
+
+        {{#if loggedIn}}
+        <div class="row d-flex align-items-center">
+            <img src="/vehicle-cab-icon.svg" alt="" class="col-3 icon">
+            <a href="/create-vehicle" class="col-9">Create a Vehicle</a>
+        </div>
+
+        <div class="row d-flex align-items-center">
+            <img src="/vehicle-cab-icon.svg" alt="" class="col-3 icon">
+            <a href="/create-event" class="col-9">Create an Event</a>
+        </div>
+
+        <div class="row d-flex align-items-center">
+            <img src="/profile-icon.svg" alt="" class="col-3 icon">
+            <a href="/profile-edit" class="col-9">Edit Profile</a>
+        </div>
+
+        <div class="logout-btnA row d-flex align-items-center">
+            <img src="/profile-icon.svg" alt="" class="col-3 icon">
+            <a href="" class="col-9">Sign Out</a>
+        </div>
+        {{/if}}
+    </div>
+    <div class="align-self-end">
+        <a href="/" class="web-logo"><img class="nav-logo" src="/logo.svg" alt="Glide carpool app logo"
+                width="200px"></a>
+    </div>
+</div>

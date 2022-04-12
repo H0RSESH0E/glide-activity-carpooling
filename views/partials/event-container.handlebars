@@ -1,0 +1,18 @@
+<div class="card event-card" style="width: 18rem;">
+  <img class="card-img-top" src="{{activity.image_url}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{activity.title}}</h5>
+    <p class="card-text">{{event_name}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Participants: {{min_participants}} - {{max_participants}}</li>
+    <li class="list-group-item">Location: {{location.city}}</li>
+    <li class="list-group-item">Starts: {{time_begin}}</li>
+    <li class="list-group-item">Ends: {{time_end}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="/api/event/{{id}}" class="card-link">Details</a>
+  </div>
+</div>
+
+<script src="/javascript/all-events.js"></script>

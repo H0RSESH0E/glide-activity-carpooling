@@ -1,0 +1,16 @@
+
+
+        <div class="row  justify-content-center">
+            <header class="col-12 d-flex justify-content-center">
+                <h2 class="main-heading light-on-dark">Find an Event</h2>
+            </header>
+        </div>
+
+        <section class="row">
+            <div class="col-12 d-flex justify-content-center flex-wrap">
+                {{#each events as |item|}}
+                {{> event-container item }}
+                {{/each}}
+            </div>
+        </section>
+

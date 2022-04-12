@@ -1,7 +1,19 @@
-<div class="post-list">
-  {{#each posts as |post|}}
-  <div class="card">
-    {{> post-info post }}
+<div class="landing-page">
+  <a href="/" class="web-logo landing-logo"><img src="logo.svg" alt="Glide carpool app logo" width="100%"></a>
+
+  <div class="description">
+    <p class="desc-text">With Glide help reduce vehicle emissions, save time and money, and make new friends.</p>
   </div>
-  {{/each}}
+  <div class="btnContainer row">
+    {{#if loggedIn}}
+    <button id="logout">Logout</button>
+    {{else}}
+    <a href="/login" class="col-lg-6 col-sm-6 btn login-btn">Log In</a>
+    <a href="/signup" class="col-lg-6 col-sm-6 btn">Sign Up</a>
+    {{/if}}
+  </div>
 </div>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}

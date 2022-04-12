@@ -1,0 +1,503 @@
+:root {
+    --button-blue: #2c3b89;
+    --main-blue: #1f1965;
+    --grey: #797979;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.outer-div {
+    display: flex;
+    height: 100%;
+}
+
+.side-bar {
+    flex: 1 0 0;
+}
+
+.scrollable {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+
+/* NAVIGATION */
+.login-name {
+    line-height: 1;
+    font-size: 1.5em;
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
+.web-nav {
+    background-color: var(--main-blue);
+    min-height: 100vh;
+    padding: 2vw 2vh;
+    width: max-content;
+    /* position: fixed; */
+    min-width: 350px;
+    opacity: 0.95;
+}
+
+.nav-column {
+    line-height: 3;
+    font-size: 1.3em;
+}
+
+
+
+button[type="submit"],
+.btn {
+    background-color: var(--button-blue);
+    color: #fff;
+    width: 40%;
+    width: max-content;
+    font-size: 1.3rem;
+    margin: 20px;
+}
+
+.nav-column a:hover,
+button[type="submit"]:hover,
+.btn:hover {
+    color: #fd457d;
+    /* border: none; removing the border causes layout changes - making it transparent will achieve the same without affecting layout*/
+    border-color: rgba(255, 255, 255, 0);
+}
+
+
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-logo {
+    display: block;
+    margin: 0 auto;
+}
+
+.web-logo {
+    margin: auto auto 0 auto;
+}
+
+hr {
+    color: #fff;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* LANDING PAGE */
+
+body {
+    background-image: url(../images/background.webp);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.btnContainer {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.landing-logo {
+    margin-top: 10vh;
+    display: flex;
+}
+
+.description {
+    color: #fff;
+    text-align: center;
+    font-size: 2vw;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+
+form {
+    width: 100%;
+
+}
+
+/* LOGIN PAGE */
+
+form {
+    background-color: #fff;
+    opacity: 0.9;
+    padding: 20px;
+}
+
+/* .signupForm,
+.login-form {
+    background-color: #fff;
+    opacity: 0.9;
+    padding: 20px;
+} */
+
+input {
+    width: 100%;
+
+    border: none;
+    border-bottom: 1px solid Black;
+    line-height: 4;
+}
+
+
+/* SIGN UP FORM */
+
+.login-form,
+.signupForm {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-form h3,
+.signupForm h3 {
+    color: var(--main-blue);
+    text-align: center;
+    font-size: 4vw;
+}
+
+.signupBtn {
+    text-align: center;
+}
+
+
+/* HAMBURGER MENU BAR */
+
+#navbar-logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.header {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar {
+    margin: 10px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hamburger {
+    margin-right: 20px;
+    display: block;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 3px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+.navMenu {
+    display: none;
+    position: absolute;
+    margin: 0 auto;
+    z-index: 100;
+    background-color: var(--main-blue);
+    opacity: 0.9;
+    top: 60px;
+    /* left: 180px; */
+    right: 60px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 75vw;
+    max-width: 450px;
+
+}
+
+.navMenu-two {
+    /* display: none; */
+    position: static;
+    margin: 0 auto;
+    z-index: 100;
+    background-color: var(--main-blue);
+    opacity: 0.9;
+    /* left: 180px; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 75vw;
+    max-width: 360px;
+height: 100vh;
+}
+
+.icon {
+    width: 65px;
+    max-width: 65px;
+    margin-left: 15px;
+}
+
+.nav-menu {
+    background-color: var(--main-blue);
+
+    height: 100vh;
+}
+
+
+.nav-link {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+    display: inline;
+    line-height: 2.5;
+}
+
+.nav-link:hover {
+    color: #482ff7;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #482ff7;
+}
+
+.cell-nav-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* FORMS */
+
+
+main {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+label {
+    color: var(--main-blue)
+}
+
+input {
+    margin: 8px 0px;
+}
+
+.scrollable {
+    background: none;
+}
+
+main h2 {
+    color: var(--main-blue);
+    z-index: 1000;
+    margin-top: 30px;
+}
+
+header {
+    margin: 0;
+}
+
+.main-heading {
+    padding: 15px;
+
+}
+
+.light-on-dark {
+    color: #fff;
+}
+
+
+/* CARDS */
+
+.card {
+    margin: 2.0vw 2vh;
+    width: 250px;
+}
+
+.event-card {
+    margin: 4.0vw 6vh !important;
+}
+
+.card-img-top {
+    height: 160px;
+    object-fit: cover;
+    object-position: bottom center;
+}
+
+.card-link {
+    color: var(--button-blue);
+}
+
+/* MAP */
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}
+
+#dashboard-table {
+    --bs-table-bg: #1f1965da !important;
+}
+
+
+/* mobile */
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -60%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: var(--main-blue);
+        width: 60%;
+        border-radius: 10px;
+        /* text-align: center; */
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navbar a {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar {
+        display: flex;
+    }
+
+    .nav-hide {
+        display: none;
+    }
+
+    .hide {
+        display: inline;
+    }
+
+    .cell-nav {
+        display: flex;
+        background-color: var(--main-blue);
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    button[type="submit"] {
+        width: 50%;
+        text-align: center;
+    }
+
+    body {
+        min-height: 100%;
+        background-size: auto;
+    }
+
+    main {
+        margin: 20px;
+        padding: 20px;
+        height: 100vh;
+    }
+
+    button .btn {
+        padding: 20px;
+    }
+
+
+}
+
+
+/* tablets, less than 992px */
+
+@media (max-width: 769.98px) {
+    .web-nav li {
+        font-size: 2.2vw;
+    }
+
+    .description {
+        font-size: 1.5rem;
+    }
+
+    .navbar {
+        display: flex;
+    }
+
+    .nav-hide {
+        display: none;
+    }
+
+    .card {
+        margin: 2.0vw;
+        width: 180px;
+    }
+
+    .card-img-top {
+        height: 140px;
+        object-fit: cover;
+    }
+}
+
+#editSubmit {
+    display: flex;
+    flex: 1 0 10vw;
+    justify-content: center;
+    width: 50%;
+    height: 80%;
+}
+
+input {
+    text-align: center;
+}
