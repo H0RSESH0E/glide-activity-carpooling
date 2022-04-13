@@ -4,7 +4,7 @@
 
 # Deployed Links
 
-Heroku: https://glide-carpool-app.herokuapp.com/
+Heroku: https://glide-activity-carpooling.herokuapp.com/
 
 ## Description
 
