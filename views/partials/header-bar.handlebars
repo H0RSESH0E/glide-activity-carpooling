@@ -22,10 +22,11 @@
 <div class="navMenu nav-column">
     {{#if loggedIn}}
     <div class="row d-flex">
-        <h2 class="col-12 d-flex light-on-dark login-name justify-content-center align-items-center">Hi {{first_name}}!
+        <h2 class="col-12 d-flex light-on-dark login-name justify-content-center align-items-center text-center">Hi
+            {{first_name}}!
         </h2>
     </div>
-    
+
     <div class="row d-flex align-items-center">
         <img src="/vehicle-cab-icon.svg" alt="" class="col-3 icon">
         <a href="/dashboard" class="col-9">Dashboard</a>
@@ -69,13 +70,13 @@
     </div>
 
     <div class="logout-btnB row d-flex align-items-center">
-        <img src="/profile-icon.svg" alt="" class="col-3 icon">
+        <img src="/logout-icon.svg" alt="" class="col-3 icon">
         <a href="" class="col-9">Sign Out</a>
     </div>
     {{/if}}
 
-    <div class="row d-flex align-items-center">
+    {{!-- <div class="row d-flex align-items-center">
         <a href="/" class="web-logo"><img class="nav-logo" src="/logo.svg" alt="Glide carpool app logo"
                 width="200px"></a>
-    </div>
+    </div> --}}
 </div>
