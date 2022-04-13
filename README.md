@@ -78,31 +78,51 @@ Once installed, type `npm start` to start server.
  Homepage
 ```
 
-![Deployed Application](https://github.com/SophieQuan/glide-carpool-app/blob/b1a1018d90fa216e05ab42e83c44e1a0ccf92e2a/public/videos/homepage.png?raw=true)
+![glide app screenshot #1](public/images/screenshot1.png?raw=true)
 
 ```
   Signup Page
 ```
 
-![Deployed Application](https://github.com/SophieQuan/glide-carpool-app/blob/b1a1018d90fa216e05ab42e83c44e1a0ccf92e2a/public/videos/signup.png?raw=true)
+![glide app screenshot #10](public/images/screenshot10.png?raw=true)
+
+```
+  Popular Activities Page
+```
+
+![glide app screenshot #2](public/images/screenshot2.png?raw=true)
+
+```
+  Browse Event Page
+```
+
+![glide app screenshot #3](public/images/screenshot3.png?raw=true)
 
 ```
   Create Event Page
 ```
 
-![Deployed Application](https://github.com/SophieQuan/glide-carpool-app/blob/b1a1018d90fa216e05ab42e83c44e1a0ccf92e2a/public/videos/create-event.png?raw=true)
+![glide app screenshot #5](public/images/screenshot5.png?raw=true)
 
 ```
   Create Vehicle Page
 ```
 
-![Deployed Application](https://github.com/SophieQuan/glide-carpool-app/blob/b1a1018d90fa216e05ab42e83c44e1a0ccf92e2a/public/videos/create-vehicle.png?raw=true)
+![glide app screenshot #4](public/images/screenshot4.png?raw=true)
 
 ```
   Profile Edit Page
 ```
 
-![Deployed Application](https://github.com/SophieQuan/glide-carpool-app/blob/b1a1018d90fa216e05ab42e83c44e1a0ccf92e2a/public/videos/profile-edit.png?raw=true)
+![glide app screenshot #6](public/images/screenshot6.png?raw=true)
+
+```
+  Mobile views
+```
+
+![glide app screenshot #7](public/images/screenshot7.png?raw=true)
+![glide app screenshot #8](public/images/screenshot8.png?raw=true)
+![glide app screenshot #9](public/images/screenshot9.png?raw=true)
 
 ---
 
@@ -149,15 +169,3 @@ KaitlynSkinner - KaitlynSkinner
 SophieQuan - Sophie Quan
 MrBearSir - Oleg
 HORSESHOE - David Baron
-
-## Screenshots
-
-![glide app screenshot #1](public/images/screenshot1.png?raw=true)
-![glide app screenshot #2](public/images/screenshot2.png?raw=true)
-![glide app screenshot #3](public/images/screenshot3.png?raw=true)
-![glide app screenshot #4](public/images/screenshot4.png?raw=true)
-![glide app screenshot #5](public/images/screenshot5.png?raw=true)
-![glide app screenshot #6](public/images/screenshot6.png?raw=true)
-![glide app screenshot #7](public/images/screenshot7.png?raw=true)
-![glide app screenshot #8](public/images/screenshot8.png?raw=true)
-![glide app screenshot #9](public/images/screenshot9.png?raw=true)
